@@ -77,7 +77,7 @@ namespace LibraryManagement
             this.flowLayoutPanel1.Location = new System.Drawing.Point(56, 168);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(223, 31);
-            this.flowLayoutPanel1.TabIndex = 2;
+            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // pictureBox2
             // 
@@ -98,7 +98,7 @@ namespace LibraryManagement
             this.txtBxUserName.Location = new System.Drawing.Point(33, 3);
             this.txtBxUserName.Name = "txtBxUserName";
             this.txtBxUserName.Size = new System.Drawing.Size(181, 27);
-            this.txtBxUserName.TabIndex = 1;
+            this.txtBxUserName.TabIndex = 2;
             this.txtBxUserName.Text = "Username";
             this.txtBxUserName.Enter += new System.EventHandler(this.txtBxUserName_Enter);
             this.txtBxUserName.Leave += new System.EventHandler(this.txtBxUserName_Leave);
@@ -110,7 +110,7 @@ namespace LibraryManagement
             this.flowLayoutPanel2.Location = new System.Drawing.Point(56, 204);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(223, 30);
-            this.flowLayoutPanel2.TabIndex = 2;
+            this.flowLayoutPanel2.TabIndex = 0;
             // 
             // pictureBox3
             // 
@@ -131,7 +131,7 @@ namespace LibraryManagement
             this.txtBxPassword.Location = new System.Drawing.Point(33, 3);
             this.txtBxPassword.Name = "txtBxPassword";
             this.txtBxPassword.Size = new System.Drawing.Size(181, 27);
-            this.txtBxPassword.TabIndex = 2;
+            this.txtBxPassword.TabIndex = 3;
             this.txtBxPassword.Text = "Password";
             this.txtBxPassword.Enter += new System.EventHandler(this.txtBxPassword_Enter);
             this.txtBxPassword.Leave += new System.EventHandler(this.txtBxPassword_Leave);
@@ -152,10 +152,10 @@ namespace LibraryManagement
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnLogin.Location = new System.Drawing.Point(56, 251);
+            this.btnLogin.Location = new System.Drawing.Point(56, 252);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(223, 30);
-            this.btnLogin.TabIndex = 3;
+            this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
             // 
@@ -165,10 +165,10 @@ namespace LibraryManagement
             this.btnSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignUp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(209)))), ((int)(((byte)(36)))));
-            this.btnSignUp.Location = new System.Drawing.Point(59, 292);
+            this.btnSignUp.Location = new System.Drawing.Point(56, 302);
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.Size = new System.Drawing.Size(223, 30);
-            this.btnSignUp.TabIndex = 3;
+            this.btnSignUp.TabIndex = 5;
             this.btnSignUp.Text = "Sign Up";
             this.btnSignUp.UseVisualStyleBackColor = false;
             // 
