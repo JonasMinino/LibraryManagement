@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManagement", "LibraryManagement\LibraryManagement.csproj", "{64AC721F-C229-4987-B435-CEF206BC780F}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "LibraryDB", "LibraryDB\LibraryDB.sqlproj", "{44E7DE55-890B-4C07-BD3F-49E5D8D7EF68}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "LibrarySQLProject", "LibraryDB\LibrarySQLProject.sqlproj", "{44E7DE55-890B-4C07-BD3F-49E5D8D7EF68}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

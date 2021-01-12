@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>LibraryDB</Name>
+    <Name>LibrarySQLProject</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{44e7de55-890b-4c07-bd3f-49e5d8d7ef68}</ProjectGuid>
@@ -56,5 +56,16 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="dbo" />
+    <Folder Include="dbo\tables" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\tables\Login.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="LibraryDB.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LibraryDB.publish.xml" />
   </ItemGroup>
 </Project>
