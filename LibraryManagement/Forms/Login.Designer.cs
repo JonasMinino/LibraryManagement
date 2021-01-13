@@ -57,7 +57,7 @@ namespace LibraryManagement
             this.lblTitle.Margin = new System.Windows.Forms.Padding(0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(77, 33);
-            this.lblTitle.TabIndex = 1;
+            this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Login";
             // 
             // pictureBox1
@@ -77,7 +77,7 @@ namespace LibraryManagement
             this.flowLayoutPanel1.Location = new System.Drawing.Point(56, 168);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(223, 31);
-            this.flowLayoutPanel1.TabIndex = 0;
+            this.flowLayoutPanel1.TabIndex = 2;
             // 
             // pictureBox2
             // 
@@ -98,7 +98,7 @@ namespace LibraryManagement
             this.txtBxUserName.Location = new System.Drawing.Point(33, 3);
             this.txtBxUserName.Name = "txtBxUserName";
             this.txtBxUserName.Size = new System.Drawing.Size(181, 27);
-            this.txtBxUserName.TabIndex = 2;
+            this.txtBxUserName.TabIndex = 0;
             this.txtBxUserName.Text = "Username";
             this.txtBxUserName.Enter += new System.EventHandler(this.txtBxUserName_Enter);
             this.txtBxUserName.Leave += new System.EventHandler(this.txtBxUserName_Leave);
@@ -110,7 +110,7 @@ namespace LibraryManagement
             this.flowLayoutPanel2.Location = new System.Drawing.Point(56, 204);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(223, 30);
-            this.flowLayoutPanel2.TabIndex = 0;
+            this.flowLayoutPanel2.TabIndex = 3;
             // 
             // pictureBox3
             // 
@@ -131,7 +131,7 @@ namespace LibraryManagement
             this.txtBxPassword.Location = new System.Drawing.Point(33, 3);
             this.txtBxPassword.Name = "txtBxPassword";
             this.txtBxPassword.Size = new System.Drawing.Size(181, 27);
-            this.txtBxPassword.TabIndex = 3;
+            this.txtBxPassword.TabIndex = 0;
             this.txtBxPassword.Text = "Password";
             this.txtBxPassword.Enter += new System.EventHandler(this.txtBxPassword_Enter);
             this.txtBxPassword.Leave += new System.EventHandler(this.txtBxPassword_Leave);
@@ -143,7 +143,7 @@ namespace LibraryManagement
             this.groupBox1.Location = new System.Drawing.Point(56, 147);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(223, 5);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
             // btnLogin
@@ -158,6 +158,7 @@ namespace LibraryManagement
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // btnSignUp
             // 
