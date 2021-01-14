@@ -90,5 +90,14 @@ namespace LibraryManagement
                 
             }
         }
+        /// <summary>
+        /// Opens the sign up 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSignUp_Click(object sender, EventArgs e)
+        {
+            this.Hide(); (new SignUp()).ShowDialog(); this.Close();
+        }
     }
 }
