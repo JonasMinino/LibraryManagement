@@ -16,5 +16,14 @@ namespace LibraryManagement.Forms
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// Closes the forgot password form and opens the login form. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Hide(); (new Login()).ShowDialog(); this.Close();
+        }
     }
 }
