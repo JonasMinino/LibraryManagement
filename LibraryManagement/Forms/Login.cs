@@ -106,7 +106,7 @@ namespace LibraryManagement
         /// <param name="e"></param>
         private void lnkForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            this.Hide(); (new ForgotPassword()).ShowDialog(); this.Close();
         }
     }
 }
