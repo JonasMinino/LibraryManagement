@@ -79,6 +79,7 @@ namespace LibraryManagement.Forms
             this.addNewBookToolStripMenuItem.Name = "addNewBookToolStripMenuItem";
             this.addNewBookToolStripMenuItem.Size = new System.Drawing.Size(227, 38);
             this.addNewBookToolStripMenuItem.Text = "Add New Book";
+            this.addNewBookToolStripMenuItem.Click += new System.EventHandler(this.addNewBookToolStripMenuItem_Click);
             // 
             // viewBooksToolStripMenuItem
             // 

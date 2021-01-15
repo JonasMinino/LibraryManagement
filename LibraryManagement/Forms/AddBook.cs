@@ -16,5 +16,14 @@ namespace LibraryManagement.Forms
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// Closes the add book form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

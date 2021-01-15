@@ -16,6 +16,14 @@ namespace LibraryManagement.Forms
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Opens the Add New Book form if not open already. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void addNewBookToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["AddBook"]==null)(new AddBook()).ShowDialog();           
+        }
     }
 }
