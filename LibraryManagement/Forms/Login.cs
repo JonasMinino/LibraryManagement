@@ -99,5 +99,14 @@ namespace LibraryManagement
         {
             this.Hide(); (new SignUp()).ShowDialog(); this.Close();
         }
+        /// <summary>
+        /// Opens the forgot password form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void lnkForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
     }
 }
