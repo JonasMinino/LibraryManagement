@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryManagement.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,9 +22,21 @@ namespace LibraryManagement.Forms
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void button2_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        /// <summary>
+        /// Checks for missing needed information from the textboxes. 
+        /// Checks if there is already a duplicate copy of the book.
+        /// Adds a the new record if there is none.
+        /// Gives a choice to add a second copy to the records.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

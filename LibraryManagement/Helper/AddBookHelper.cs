@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryManagement.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,10 @@ namespace LibraryManagement.Helper
 {
     public static class AddBookHelper
     {
+        public static bool CheckBookRecord(Book book)
+        {
 
+            return false;
+        }
     }
 }

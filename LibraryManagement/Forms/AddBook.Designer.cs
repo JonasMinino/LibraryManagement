@@ -31,22 +31,22 @@ namespace LibraryManagement.Forms
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtTitle = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtAuthor = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtPublisher = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtISBN = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.cbxType = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dpYear = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtISBN = new System.Windows.Forms.TextBox();
+            this.txtPublisher = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtAuthor = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtTitle = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -71,15 +71,25 @@ namespace LibraryManagement.Forms
             this.panel1.Size = new System.Drawing.Size(619, 67);
             this.panel1.TabIndex = 1;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(205, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(176, 33);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Add New Book";
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(248)))), ((int)(((byte)(93)))));
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.btnCancel);
+            this.panel2.Controls.Add(this.btnAdd);
+            this.panel2.Controls.Add(this.cbxType);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.dateTimePicker1);
+            this.panel2.Controls.Add(this.dpYear);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.txtISBN);
             this.panel2.Controls.Add(this.txtPublisher);
@@ -93,102 +103,43 @@ namespace LibraryManagement.Forms
             this.panel2.Size = new System.Drawing.Size(350, 308);
             this.panel2.TabIndex = 2;
             // 
-            // label1
+            // btnCancel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(205, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(176, 33);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Add New Book";
+            this.btnCancel.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnCancel.Location = new System.Drawing.Point(225, 264);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(86, 32);
+            this.btnCancel.TabIndex = 1;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // label2
+            // btnAdd
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(20, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 26);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Title";
+            this.btnAdd.BackColor = System.Drawing.Color.Gold;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(123, 264);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(86, 32);
+            this.btnAdd.TabIndex = 1;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // txtTitle
+            // cbxType
             // 
-            this.txtTitle.Location = new System.Drawing.Point(123, 15);
-            this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(200, 20);
-            this.txtTitle.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(20, 56);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 26);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Author";
-            // 
-            // txtAuthor
-            // 
-            this.txtAuthor.Location = new System.Drawing.Point(123, 57);
-            this.txtAuthor.Name = "txtAuthor";
-            this.txtAuthor.Size = new System.Drawing.Size(200, 20);
-            this.txtAuthor.TabIndex = 1;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(20, 97);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 26);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Publisher";
-            // 
-            // txtPublisher
-            // 
-            this.txtPublisher.Location = new System.Drawing.Point(123, 99);
-            this.txtPublisher.Name = "txtPublisher";
-            this.txtPublisher.Size = new System.Drawing.Size(200, 20);
-            this.txtPublisher.TabIndex = 1;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(21, 138);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 26);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Year";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CustomFormat = "yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(123, 141);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 2;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(21, 179);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 26);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "ISBN";
-            // 
-            // txtISBN
-            // 
-            this.txtISBN.Location = new System.Drawing.Point(123, 183);
-            this.txtISBN.Name = "txtISBN";
-            this.txtISBN.Size = new System.Drawing.Size(200, 20);
-            this.txtISBN.TabIndex = 1;
+            this.cbxType.FormattingEnabled = true;
+            this.cbxType.Items.AddRange(new object[] {
+            "Hardcover",
+            "Paperback"});
+            this.cbxType.Location = new System.Drawing.Point(123, 225);
+            this.cbxType.Name = "cbxType";
+            this.cbxType.Size = new System.Drawing.Size(121, 21);
+            this.cbxType.TabIndex = 3;
             // 
             // label7
             // 
@@ -200,42 +151,92 @@ namespace LibraryManagement.Forms
             this.label7.TabIndex = 0;
             this.label7.Text = "Type";
             // 
-            // comboBox1
+            // label6
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Hardcover",
-            "Softcover"});
-            this.comboBox1.Location = new System.Drawing.Point(123, 225);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 3;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(21, 179);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(54, 26);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "ISBN";
             // 
-            // button1
+            // dpYear
             // 
-            this.button1.BackColor = System.Drawing.Color.Gold;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(123, 264);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 32);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = false;
+            this.dpYear.CustomFormat = "yyyy";
+            this.dpYear.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dpYear.Location = new System.Drawing.Point(123, 141);
+            this.dpYear.Name = "dpYear";
+            this.dpYear.Size = new System.Drawing.Size(200, 20);
+            this.dpYear.TabIndex = 2;
             // 
-            // button2
+            // label5
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button2.Location = new System.Drawing.Point(225, 264);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(86, 32);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(21, 138);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(49, 26);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Year";
+            // 
+            // txtISBN
+            // 
+            this.txtISBN.Location = new System.Drawing.Point(123, 183);
+            this.txtISBN.Name = "txtISBN";
+            this.txtISBN.Size = new System.Drawing.Size(200, 20);
+            this.txtISBN.TabIndex = 1;
+            // 
+            // txtPublisher
+            // 
+            this.txtPublisher.Location = new System.Drawing.Point(123, 99);
+            this.txtPublisher.Name = "txtPublisher";
+            this.txtPublisher.Size = new System.Drawing.Size(200, 20);
+            this.txtPublisher.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(20, 97);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(92, 26);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Publisher";
+            // 
+            // txtAuthor
+            // 
+            this.txtAuthor.Location = new System.Drawing.Point(123, 57);
+            this.txtAuthor.Name = "txtAuthor";
+            this.txtAuthor.Size = new System.Drawing.Size(200, 20);
+            this.txtAuthor.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(20, 56);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(72, 26);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Author";
+            // 
+            // txtTitle
+            // 
+            this.txtTitle.Location = new System.Drawing.Point(123, 15);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(200, 20);
+            this.txtTitle.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(20, 15);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 26);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Title";
             // 
             // AddBook
             // 
@@ -264,10 +265,10 @@ namespace LibraryManagement.Forms
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbxType;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dpYear;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtISBN;
         private System.Windows.Forms.TextBox txtPublisher;
@@ -276,7 +277,7 @@ namespace LibraryManagement.Forms
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnAdd;
     }
 }
