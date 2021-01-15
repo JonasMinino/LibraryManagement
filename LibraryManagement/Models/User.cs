@@ -8,12 +8,12 @@ namespace LibraryManagement.Models
 {
     public class User
     {
-        private int Id { get; set; }
-        private string Username { get; set; }
-        private string Password { get; set; }
-        private string Email { get; set; }
+        private int? Id { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public string Email { get; set; }
 
-        public User(int id, string username, string password, string email)
+        public User(int? id, string username, string password, string email)
         {
             Id = id;
             Username = username;
