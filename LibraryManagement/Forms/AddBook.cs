@@ -10,12 +10,11 @@ using System.Windows.Forms;
 
 namespace LibraryManagement.Forms
 {
-    public partial class Main : Form
+    public partial class AddBook : Form
     {
-        public Main()
+        public AddBook()
         {
             InitializeComponent();
         }
-
     }
 }

@@ -65,6 +65,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\AddBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddBook.Designer.cs">
+      <DependentUpon>AddBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ForgotPassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,11 +99,17 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AddBook.resx">
+      <DependentUpon>AddBook.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ForgotPassword.resx">
       <DependentUpon>ForgotPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SignUp.resx">
       <DependentUpon>SignUp.cs</DependentUpon>
@@ -154,6 +166,17 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>LibaryDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\read_animated.gif" />
+    <None Include="Resources\addStudent.png" />
+    <None Include="Resources\accreditation.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\book.png" />
+    <None Include="Resources\books.png" />
+    <None Include="Resources\books-for-study.png" />
+    <None Include="Resources\flat-lay.png" />
+    <None Include="Resources\graduated.png" />
+    <None Include="Resources\open-book.png" />
+    <None Include="Resources\books.jpg" />
     <None Include="Resources\avatarGold.png" />
     <None Include="Resources\mailGold.png" />
     <None Include="Resources\lockGold.png" />
