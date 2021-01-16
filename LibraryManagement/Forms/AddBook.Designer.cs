@@ -38,7 +38,6 @@ namespace LibraryManagement.Forms
             this.cbxType = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.dpYear = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.txtISBN = new System.Windows.Forms.TextBox();
             this.txtPublisher = new System.Windows.Forms.TextBox();
@@ -47,6 +46,7 @@ namespace LibraryManagement.Forms
             this.label3 = new System.Windows.Forms.Label();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtYear = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -89,9 +89,9 @@ namespace LibraryManagement.Forms
             this.panel2.Controls.Add(this.cbxType);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.dpYear);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.txtISBN);
+            this.panel2.Controls.Add(this.txtYear);
             this.panel2.Controls.Add(this.txtPublisher);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.txtAuthor);
@@ -161,15 +161,6 @@ namespace LibraryManagement.Forms
             this.label6.TabIndex = 0;
             this.label6.Text = "ISBN";
             // 
-            // dpYear
-            // 
-            this.dpYear.CustomFormat = "yyyy";
-            this.dpYear.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dpYear.Location = new System.Drawing.Point(123, 141);
-            this.dpYear.Name = "dpYear";
-            this.dpYear.Size = new System.Drawing.Size(200, 20);
-            this.dpYear.TabIndex = 2;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -238,6 +229,13 @@ namespace LibraryManagement.Forms
             this.label2.TabIndex = 0;
             this.label2.Text = "Title";
             // 
+            // txtYear
+            // 
+            this.txtYear.Location = new System.Drawing.Point(123, 144);
+            this.txtYear.Name = "txtYear";
+            this.txtYear.Size = new System.Drawing.Size(200, 20);
+            this.txtYear.TabIndex = 1;
+            // 
             // AddBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -268,7 +266,6 @@ namespace LibraryManagement.Forms
         private System.Windows.Forms.ComboBox cbxType;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dpYear;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtISBN;
         private System.Windows.Forms.TextBox txtPublisher;
@@ -279,5 +276,6 @@ namespace LibraryManagement.Forms
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.TextBox txtYear;
     }
 }
