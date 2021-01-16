@@ -42,20 +42,21 @@ namespace LibraryManagement.Helper
         /// <returns></returns>
         public static int GetBookId(Book book)
         {
-            int id = 0;
+            int id=0;
             using (con = new SqlConnection(conString))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Books WHERE Title=@title AND Author=@author AND Publisher=@publisher, AND Year=@year)", con);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Books WHERE Title=@title AND Author=@author AND Publisher=@publisher AND Year=@year", con);
                 cmd.Parameters.AddWithValue("@title", book.Title);
                 cmd.Parameters.AddWithValue("@author", book.Author);
                 cmd.Parameters.AddWithValue("@publisher", book.Publisher);
                 cmd.Parameters.AddWithValue("@year", book.Year);
-                SqlDataReader rdr = cmd.ExecuteReader();
-                if (rdr.HasRows) id = int.Parse(rdr["BookId"].ToString());
-                rdr.Close();
-            }
+                using (SqlDataReader rdr = cmd.ExecuteReader())
+                {
+                    if (rdr.HasRows) while (rdr.Read()) id = int.Parse(rdr["BookId"].ToString());
+                }             
 
+            }
             return id;
         }
         /// <summary>
