@@ -38,7 +38,6 @@ namespace LibraryManagement.Forms
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.libaryDBDataSet = new LibraryManagement.LibaryDBDataSet();
             this.booksBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.booksTableAdapter = new LibraryManagement.LibaryDBDataSetTableAdapters.BooksTableAdapter();
@@ -47,16 +46,17 @@ namespace LibraryManagement.Forms
             this.libaryDBDataSet1 = new LibraryManagement.LibaryDBDataSet1();
             this.booksBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.booksTableAdapter1 = new LibraryManagement.LibaryDBDataSet1TableAdapters.BooksTableAdapter();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvViewBooks)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.libaryDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.libaryDBDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.libaryDBDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvViewBooks
@@ -94,6 +94,7 @@ namespace LibraryManagement.Forms
             this.btnUpdate.TabIndex = 2;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -150,16 +151,6 @@ namespace LibraryManagement.Forms
             this.label2.TabIndex = 0;
             this.label2.Text = "Current Books";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::LibraryManagement.Properties.Resources.bookstack;
-            this.pictureBox1.Location = new System.Drawing.Point(2, 67);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(189, 333);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            // 
             // libaryDBDataSet
             // 
             this.libaryDBDataSet.DataSetName = "LibaryDBDataSet";
@@ -198,6 +189,16 @@ namespace LibraryManagement.Forms
             // 
             this.booksTableAdapter1.ClearBeforeFill = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::LibraryManagement.Properties.Resources.bookstack;
+            this.pictureBox1.Location = new System.Drawing.Point(2, 67);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(189, 333);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
             // ViewBooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -208,20 +209,22 @@ namespace LibraryManagement.Forms
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvViewBooks);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ViewBooks";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ViewBooks";
             this.Load += new System.EventHandler(this.ViewBooks_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvViewBooks)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.libaryDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.libaryDBDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.libaryDBDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -13,6 +13,7 @@ namespace LibraryManagement.Forms
 {
     public partial class ViewBooks : Form
     {
+        public static int CurrentId = 0;
         public ViewBooks()
         {
             InitializeComponent();
@@ -49,6 +50,18 @@ namespace LibraryManagement.Forms
         private void btnAdd_Click(object sender, EventArgs e)
         {
             this.Hide(); (new AddBook()).ShowDialog(); this.Close();
+        }
+        /// <summary>
+        /// Changes the value of the current id variable.
+        /// Opens the Update Book Form.
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            CurrentId = int.Parse(dgvViewBooks.CurrentRow.Cells["BookId"].Value.ToString());
+            (new UpdateBook()).ShowDialog();
         }
     }
 }
