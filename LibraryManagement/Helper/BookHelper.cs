@@ -113,5 +113,18 @@ namespace LibraryManagement.Helper
             }
         }
 
+        public static DataTable GetSingleRow(int id)
+        {
+            using (con = new SqlConnection(conString))
+            {
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Books WHERE BookId=@id", con);
+                cmd.Parameters.AddWithValue("@id", id);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+        }
+
     }
 }
