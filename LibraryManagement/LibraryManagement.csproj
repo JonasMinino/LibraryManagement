@@ -103,6 +103,11 @@
     </Compile>
     <Compile Include="Helper\AddBookHelper.cs" />
     <Compile Include="Helper\LoginHelper.cs" />
+    <Compile Include="LibaryDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LibaryDBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
@@ -135,6 +140,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="LibaryDBDataSet.xsc">
+      <DependentUpon>LibaryDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LibaryDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LibaryDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LibaryDBDataSet.xss">
+      <DependentUpon>LibaryDBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

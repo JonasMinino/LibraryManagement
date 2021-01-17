@@ -29,6 +29,7 @@ namespace LibraryManagement.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dgvViewBooks = new System.Windows.Forms.DataGridView();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -38,18 +39,36 @@ namespace LibraryManagement.Forms
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.libaryDBDataSet = new LibraryManagement.LibaryDBDataSet();
+            this.booksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.booksTableAdapter = new LibraryManagement.LibaryDBDataSetTableAdapters.BooksTableAdapter();
+            this.bookIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.authorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.yearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.checkedoutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvViewBooks)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libaryDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvViewBooks
             // 
+            this.dgvViewBooks.AutoGenerateColumns = false;
             this.dgvViewBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvViewBooks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.bookIdDataGridViewTextBoxColumn,
+            this.titleDataGridViewTextBoxColumn,
+            this.authorDataGridViewTextBoxColumn,
+            this.yearDataGridViewTextBoxColumn,
+            this.checkedoutDataGridViewTextBoxColumn});
+            this.dgvViewBooks.DataSource = this.booksBindingSource;
             this.dgvViewBooks.Location = new System.Drawing.Point(191, 67);
             this.dgvViewBooks.Name = "dgvViewBooks";
-            this.dgvViewBooks.Size = new System.Drawing.Size(458, 272);
+            this.dgvViewBooks.Size = new System.Drawing.Size(542, 272);
             this.dgvViewBooks.TabIndex = 0;
             // 
             // btnAdd
@@ -57,7 +76,7 @@ namespace LibraryManagement.Forms
             this.btnAdd.BackColor = System.Drawing.Color.Goldenrod;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(47, 11);
+            this.btnAdd.Location = new System.Drawing.Point(34, 15);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(90, 34);
             this.btnAdd.TabIndex = 2;
@@ -69,7 +88,7 @@ namespace LibraryManagement.Forms
             this.btnUpdate.BackColor = System.Drawing.Color.Goldenrod;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(199, 11);
+            this.btnUpdate.Location = new System.Drawing.Point(163, 15);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(90, 34);
             this.btnUpdate.TabIndex = 2;
@@ -81,7 +100,7 @@ namespace LibraryManagement.Forms
             this.btnDelete.BackColor = System.Drawing.Color.Goldenrod;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(356, 11);
+            this.btnDelete.Location = new System.Drawing.Point(292, 15);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(90, 34);
             this.btnDelete.TabIndex = 2;
@@ -94,7 +113,7 @@ namespace LibraryManagement.Forms
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Gold;
-            this.btnCancel.Location = new System.Drawing.Point(503, 11);
+            this.btnCancel.Location = new System.Drawing.Point(421, 15);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(90, 34);
             this.btnCancel.TabIndex = 2;
@@ -107,9 +126,9 @@ namespace LibraryManagement.Forms
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.btnCancel);
             this.panel1.Controls.Add(this.btnUpdate);
-            this.panel1.Location = new System.Drawing.Point(1, 339);
+            this.panel1.Location = new System.Drawing.Point(191, 339);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(648, 61);
+            this.panel1.Size = new System.Drawing.Size(542, 61);
             this.panel1.TabIndex = 4;
             // 
             // panel2
@@ -118,14 +137,14 @@ namespace LibraryManagement.Forms
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(1, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(648, 67);
+            this.panel2.Size = new System.Drawing.Size(732, 67);
             this.panel2.TabIndex = 5;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(233, 19);
+            this.label2.Location = new System.Drawing.Point(281, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(165, 33);
             this.label2.TabIndex = 0;
@@ -136,28 +155,76 @@ namespace LibraryManagement.Forms
             this.pictureBox1.Image = global::LibraryManagement.Properties.Resources.bookstack;
             this.pictureBox1.Location = new System.Drawing.Point(2, 67);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(189, 271);
+            this.pictureBox1.Size = new System.Drawing.Size(189, 333);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
+            // 
+            // libaryDBDataSet
+            // 
+            this.libaryDBDataSet.DataSetName = "LibaryDBDataSet";
+            this.libaryDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // booksBindingSource
+            // 
+            this.booksBindingSource.DataMember = "Books";
+            this.booksBindingSource.DataSource = this.libaryDBDataSet;
+            // 
+            // booksTableAdapter
+            // 
+            this.booksTableAdapter.ClearBeforeFill = true;
+            // 
+            // bookIdDataGridViewTextBoxColumn
+            // 
+            this.bookIdDataGridViewTextBoxColumn.DataPropertyName = "BookId";
+            this.bookIdDataGridViewTextBoxColumn.HeaderText = "BookId";
+            this.bookIdDataGridViewTextBoxColumn.Name = "bookIdDataGridViewTextBoxColumn";
+            this.bookIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // titleDataGridViewTextBoxColumn
+            // 
+            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
+            this.titleDataGridViewTextBoxColumn.HeaderText = "Title";
+            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
+            // 
+            // authorDataGridViewTextBoxColumn
+            // 
+            this.authorDataGridViewTextBoxColumn.DataPropertyName = "Author";
+            this.authorDataGridViewTextBoxColumn.HeaderText = "Author";
+            this.authorDataGridViewTextBoxColumn.Name = "authorDataGridViewTextBoxColumn";
+            // 
+            // yearDataGridViewTextBoxColumn
+            // 
+            this.yearDataGridViewTextBoxColumn.DataPropertyName = "Year";
+            this.yearDataGridViewTextBoxColumn.HeaderText = "Year";
+            this.yearDataGridViewTextBoxColumn.Name = "yearDataGridViewTextBoxColumn";
+            // 
+            // checkedoutDataGridViewTextBoxColumn
+            // 
+            this.checkedoutDataGridViewTextBoxColumn.DataPropertyName = "Checkedout";
+            this.checkedoutDataGridViewTextBoxColumn.HeaderText = "Checkedout";
+            this.checkedoutDataGridViewTextBoxColumn.Name = "checkedoutDataGridViewTextBoxColumn";
             // 
             // ViewBooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(248)))), ((int)(((byte)(93)))));
-            this.ClientSize = new System.Drawing.Size(649, 400);
+            this.ClientSize = new System.Drawing.Size(732, 400);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvViewBooks);
             this.Name = "ViewBooks";
             this.Text = "ViewBooks";
+            this.Load += new System.EventHandler(this.ViewBooks_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvViewBooks)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libaryDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -173,5 +240,13 @@ namespace LibraryManagement.Forms
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private LibaryDBDataSet libaryDBDataSet;
+        private System.Windows.Forms.BindingSource booksBindingSource;
+        private LibaryDBDataSetTableAdapters.BooksTableAdapter booksTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bookIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn authorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn yearDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn checkedoutDataGridViewTextBoxColumn;
     }
 }
