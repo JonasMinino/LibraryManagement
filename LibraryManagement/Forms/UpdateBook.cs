@@ -1,4 +1,5 @@
 ﻿using LibraryManagement.Helper;
+using LibraryManagement.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,6 +33,7 @@ namespace LibraryManagement.Forms
                 txtPublisher.Text = row["Publisher"].ToString();
                 txtYear.Text = row["Year"].ToString();
                 txtISBN.Text = row["ISBN"].ToString();
+                txtCopies.Text = row["Copies"].ToString();
                 cmbCheckedOut.SelectedIndex = cmbCheckedOut.FindStringExact(row["Checkedout"].ToString());
                 cmbType.SelectedIndex = cmbType.FindStringExact(row["Type"].ToString());
             }
@@ -44,6 +46,26 @@ namespace LibraryManagement.Forms
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        /// <summary>
+        /// Updates a book record in the Books table. 
+        /// Displays message after update.
+        /// Refreshes the View Books Data Grid View.
+        ///Closes the current form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            Book book = new Book(BookHelper.CurrentId, txtTitle.Text, txtAuthor.Text, txtPublisher.Text, txtYear.Text, txtISBN.Text, cmbType.SelectedItem.ToString(), int.Parse(txtCopies.Text) , cmbCheckedOut.SelectedItem.ToString());
+
+            if (BookHelper.UpdateRecord(book) > 0)
+            {
+                DialogResult result = MessageBox.Show("The record for: " + book.Title + " by: " + book.Author + " has been updated.", "Update Succesful!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ViewBooks viewBooks = (ViewBooks)Application.OpenForms["ViewBooks"];
+                BookHelper.CurrentBooksData(viewBooks.dgvViewBooks);
+                this.Close();
+            }
         }
     }
 }

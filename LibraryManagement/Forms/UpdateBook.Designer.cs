@@ -49,6 +49,8 @@ namespace LibraryManagement.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmbType = new System.Windows.Forms.ComboBox();
+            this.txtCopies = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -82,8 +84,10 @@ namespace LibraryManagement.Forms
             this.panel2.Controls.Add(this.cmbCheckedOut);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.txtCopies);
             this.panel2.Controls.Add(this.txtISBN);
             this.panel2.Controls.Add(this.txtYear);
             this.panel2.Controls.Add(this.txtPublisher);
@@ -94,7 +98,7 @@ namespace LibraryManagement.Forms
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(270, 68);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(363, 365);
+            this.panel2.Size = new System.Drawing.Size(363, 396);
             this.panel2.TabIndex = 3;
             // 
             // btnCancel
@@ -103,7 +107,7 @@ namespace LibraryManagement.Forms
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnCancel.Location = new System.Drawing.Point(209, 307);
+            this.btnCancel.Location = new System.Drawing.Point(211, 341);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(86, 32);
             this.btnCancel.TabIndex = 7;
@@ -116,12 +120,13 @@ namespace LibraryManagement.Forms
             this.btnUpdate.BackColor = System.Drawing.Color.Gold;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(97, 307);
+            this.btnUpdate.Location = new System.Drawing.Point(99, 341);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(86, 32);
             this.btnUpdate.TabIndex = 6;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // cmbCheckedOut
             // 
@@ -129,7 +134,7 @@ namespace LibraryManagement.Forms
             this.cmbCheckedOut.Items.AddRange(new object[] {
             "NO",
             "YES"});
-            this.cmbCheckedOut.Location = new System.Drawing.Point(149, 268);
+            this.cmbCheckedOut.Location = new System.Drawing.Point(149, 296);
             this.cmbCheckedOut.Name = "cmbCheckedOut";
             this.cmbCheckedOut.Size = new System.Drawing.Size(121, 21);
             this.cmbCheckedOut.TabIndex = 5;
@@ -138,7 +143,7 @@ namespace LibraryManagement.Forms
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(20, 261);
+            this.label8.Location = new System.Drawing.Point(20, 288);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(127, 26);
             this.label8.TabIndex = 0;
@@ -148,7 +153,7 @@ namespace LibraryManagement.Forms
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(21, 220);
+            this.label7.Location = new System.Drawing.Point(21, 210);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 26);
             this.label7.TabIndex = 0;
@@ -158,7 +163,7 @@ namespace LibraryManagement.Forms
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(21, 179);
+            this.label6.Location = new System.Drawing.Point(21, 171);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(54, 26);
             this.label6.TabIndex = 0;
@@ -168,7 +173,7 @@ namespace LibraryManagement.Forms
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(21, 138);
+            this.label5.Location = new System.Drawing.Point(21, 132);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 26);
             this.label5.TabIndex = 0;
@@ -176,21 +181,21 @@ namespace LibraryManagement.Forms
             // 
             // txtISBN
             // 
-            this.txtISBN.Location = new System.Drawing.Point(149, 183);
+            this.txtISBN.Location = new System.Drawing.Point(149, 175);
             this.txtISBN.Name = "txtISBN";
             this.txtISBN.Size = new System.Drawing.Size(200, 20);
             this.txtISBN.TabIndex = 4;
             // 
             // txtYear
             // 
-            this.txtYear.Location = new System.Drawing.Point(149, 141);
+            this.txtYear.Location = new System.Drawing.Point(149, 135);
             this.txtYear.Name = "txtYear";
             this.txtYear.Size = new System.Drawing.Size(200, 20);
             this.txtYear.TabIndex = 3;
             // 
             // txtPublisher
             // 
-            this.txtPublisher.Location = new System.Drawing.Point(149, 99);
+            this.txtPublisher.Location = new System.Drawing.Point(149, 95);
             this.txtPublisher.Name = "txtPublisher";
             this.txtPublisher.Size = new System.Drawing.Size(200, 20);
             this.txtPublisher.TabIndex = 2;
@@ -199,7 +204,7 @@ namespace LibraryManagement.Forms
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(20, 97);
+            this.label4.Location = new System.Drawing.Point(20, 93);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(92, 26);
             this.label4.TabIndex = 0;
@@ -207,7 +212,7 @@ namespace LibraryManagement.Forms
             // 
             // txtAuthor
             // 
-            this.txtAuthor.Location = new System.Drawing.Point(149, 57);
+            this.txtAuthor.Location = new System.Drawing.Point(149, 55);
             this.txtAuthor.Name = "txtAuthor";
             this.txtAuthor.Size = new System.Drawing.Size(200, 20);
             this.txtAuthor.TabIndex = 1;
@@ -216,7 +221,7 @@ namespace LibraryManagement.Forms
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(20, 56);
+            this.label3.Location = new System.Drawing.Point(20, 54);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 26);
             this.label3.TabIndex = 0;
@@ -244,7 +249,7 @@ namespace LibraryManagement.Forms
             this.pictureBox1.Image = global::LibraryManagement.Properties.Resources.Update;
             this.pictureBox1.Location = new System.Drawing.Point(2, 69);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(271, 364);
+            this.pictureBox1.Size = new System.Drawing.Size(271, 395);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -259,16 +264,33 @@ namespace LibraryManagement.Forms
             "Hardcover",
             "Large Print",
             "Paperback"});
-            this.cmbType.Location = new System.Drawing.Point(149, 220);
+            this.cmbType.Location = new System.Drawing.Point(149, 215);
             this.cmbType.Name = "cmbType";
             this.cmbType.Size = new System.Drawing.Size(121, 21);
             this.cmbType.TabIndex = 8;
+            // 
+            // txtCopies
+            // 
+            this.txtCopies.Location = new System.Drawing.Point(149, 256);
+            this.txtCopies.Name = "txtCopies";
+            this.txtCopies.Size = new System.Drawing.Size(121, 20);
+            this.txtCopies.TabIndex = 4;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(21, 249);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(69, 26);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Copies";
             // 
             // UpdateBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 429);
+            this.ClientSize = new System.Drawing.Size(632, 464);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -308,5 +330,7 @@ namespace LibraryManagement.Forms
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox cmbType;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtCopies;
     }
 }

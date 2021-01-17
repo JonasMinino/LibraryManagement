@@ -113,7 +113,11 @@ namespace LibraryManagement.Helper
                 dgv.DataSource = dt;
             }
         }
-
+        /// <summary>
+        /// Returns a single row of data based on a book id. 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static DataTable GetSingleRow(int id)
         {
             using (con = new SqlConnection(conString))
@@ -124,6 +128,29 @@ namespace LibraryManagement.Helper
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 return dt;
+            }
+        }
+        /// <summary>
+        /// Updates a book record in the Books table. 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static int UpdateRecord(Book book)
+        {
+            using(con = new SqlConnection(conString))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("UPDATE Books SET Title=@title, Author=@author, Publisher=@pub, Year=@year, ISBN=@isbn, Type=@type, Copies=@copies, Checkedout=@check WHERE BookId=@id", con);
+                cmd.Parameters.AddWithValue("@id", book.BookId);
+                cmd.Parameters.AddWithValue("@title", book.Title);
+                cmd.Parameters.AddWithValue("@author", book.Author);
+                cmd.Parameters.AddWithValue("@pub", book.Publisher);
+                cmd.Parameters.AddWithValue("@year", book.Year);
+                cmd.Parameters.AddWithValue("@isbn", book.ISBN);
+                cmd.Parameters.AddWithValue("@type", book.Type);
+                cmd.Parameters.AddWithValue("@copies", book.NumberOfCopies);
+                cmd.Parameters.AddWithValue("@check", book.CheckedOut);
+                return cmd.ExecuteNonQuery();
             }
         }
 
