@@ -27,19 +27,6 @@ namespace LibraryManagement.Forms
         private void ViewBooks_Load(object sender, EventArgs e)
         {
             BookHelper.CurrentBooksData(dgvViewBooks); 
-            foreach(DataGridViewRow row in dgvViewBooks.Rows)
-            {
-                if (row.Cells["Checkedout"].Value.ToString() == "NO")
-                {
-                    row.Cells["Checkedout"].Style.BackColor = Color.FromArgb(184, 244, 191);
-                    row.Cells["Checkedout"].Style.Font = new Font(dgvViewBooks.Font, FontStyle.Bold);
-                }
-                else
-                {
-                    row.Cells["Checkedout"].Style.BackColor = Color.Salmon;
-                    row.Cells["Checkedout"].Style.Font = new Font(dgvViewBooks.Font, FontStyle.Bold);
-                }
-            }
         }
         /// <summary>
         /// Closes the current form and opens the Add Book Form

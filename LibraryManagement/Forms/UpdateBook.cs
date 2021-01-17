@@ -50,7 +50,7 @@ namespace LibraryManagement.Forms
         /// <summary>
         /// Updates a book record in the Books table. 
         /// Displays message after update.
-        /// Refreshes the View Books Data Grid View.
+        /// Refreshes the View Books form.
         ///Closes the current form.
         /// </summary>
         /// <param name="sender"></param>

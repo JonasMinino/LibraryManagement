@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -111,6 +112,20 @@ namespace LibraryManagement.Helper
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 dgv.DataSource = dt;
+                foreach (DataGridViewRow row in dgv.Rows)
+                {
+                    if (row.Cells["Checkedout"].Value.ToString() == "NO")
+                    {
+                        row.Cells["Checkedout"].Style.BackColor = Color.FromArgb(184, 244, 191);
+                        row.Cells["Checkedout"].Style.Font = new Font(dgv.Font, FontStyle.Bold);
+                    }
+                    else
+                    {
+                        row.Cells["Checkedout"].Style.BackColor = Color.Salmon;
+                        row.Cells["Checkedout"].Style.Font = new Font(dgv.Font, FontStyle.Bold);
+                    }
+                }
+
             }
         }
         /// <summary>
