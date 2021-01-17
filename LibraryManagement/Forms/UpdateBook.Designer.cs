@@ -34,7 +34,8 @@ namespace LibraryManagement.Forms
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.cbxType = new System.Windows.Forms.ComboBox();
+            this.cmbCheckedOut = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -47,8 +48,7 @@ namespace LibraryManagement.Forms
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.cmbCheckedOut = new System.Windows.Forms.ComboBox();
+            this.cmbType = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -76,11 +76,11 @@ namespace LibraryManagement.Forms
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(248)))), ((int)(((byte)(93)))));
+            this.panel2.Controls.Add(this.cmbType);
             this.panel2.Controls.Add(this.btnCancel);
             this.panel2.Controls.Add(this.btnUpdate);
             this.panel2.Controls.Add(this.cmbCheckedOut);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.cbxType);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
@@ -122,16 +122,26 @@ namespace LibraryManagement.Forms
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
             // 
-            // cbxType
+            // cmbCheckedOut
             // 
-            this.cbxType.FormattingEnabled = true;
-            this.cbxType.Items.AddRange(new object[] {
-            "Hardcover",
-            "Paperback"});
-            this.cbxType.Location = new System.Drawing.Point(149, 225);
-            this.cbxType.Name = "cbxType";
-            this.cbxType.Size = new System.Drawing.Size(121, 21);
-            this.cbxType.TabIndex = 5;
+            this.cmbCheckedOut.FormattingEnabled = true;
+            this.cmbCheckedOut.Items.AddRange(new object[] {
+            "NO",
+            "YES"});
+            this.cmbCheckedOut.Location = new System.Drawing.Point(149, 268);
+            this.cmbCheckedOut.Name = "cmbCheckedOut";
+            this.cmbCheckedOut.Size = new System.Drawing.Size(121, 21);
+            this.cmbCheckedOut.TabIndex = 5;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(20, 261);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(127, 26);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Checked Out ";
             // 
             // label7
             // 
@@ -238,26 +248,20 @@ namespace LibraryManagement.Forms
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // label8
+            // cmbType
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(20, 261);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(127, 26);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Checked Out ";
-            // 
-            // cmbCheckedOut
-            // 
-            this.cmbCheckedOut.FormattingEnabled = true;
-            this.cmbCheckedOut.Items.AddRange(new object[] {
-            "NO",
-            "YES"});
-            this.cmbCheckedOut.Location = new System.Drawing.Point(149, 268);
-            this.cmbCheckedOut.Name = "cmbCheckedOut";
-            this.cmbCheckedOut.Size = new System.Drawing.Size(121, 21);
-            this.cmbCheckedOut.TabIndex = 5;
+            this.cmbType.FormattingEnabled = true;
+            this.cmbType.Items.AddRange(new object[] {
+            "Audio Book",
+            "DVD",
+            "EBook",
+            "Hardcover",
+            "Large Print",
+            "Paperback"});
+            this.cmbType.Location = new System.Drawing.Point(149, 220);
+            this.cmbType.Name = "cmbType";
+            this.cmbType.Size = new System.Drawing.Size(121, 21);
+            this.cmbType.TabIndex = 8;
             // 
             // UpdateBook
             // 
@@ -271,6 +275,7 @@ namespace LibraryManagement.Forms
             this.Name = "UpdateBook";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UpdateBook";
+            this.Load += new System.EventHandler(this.UpdateBook_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -287,7 +292,6 @@ namespace LibraryManagement.Forms
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.ComboBox cbxType;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -302,5 +306,6 @@ namespace LibraryManagement.Forms
         private System.Windows.Forms.ComboBox cmbCheckedOut;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox cmbType;
     }
 }

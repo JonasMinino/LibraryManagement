@@ -13,7 +13,6 @@ namespace LibraryManagement.Forms
 {
     public partial class ViewBooks : Form
     {
-        public static int CurrentId = 0;
         public ViewBooks()
         {
             InitializeComponent();
@@ -60,7 +59,7 @@ namespace LibraryManagement.Forms
         /// <param name="e"></param>
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            CurrentId = int.Parse(dgvViewBooks.CurrentRow.Cells["BookId"].Value.ToString());
+            BookHelper.CurrentId = int.Parse(dgvViewBooks.CurrentRow.Cells["BookId"].Value.ToString());
             (new UpdateBook()).ShowDialog();
         }
     }

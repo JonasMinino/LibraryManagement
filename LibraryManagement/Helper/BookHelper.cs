@@ -15,6 +15,7 @@ namespace LibraryManagement.Helper
     {
         private static SqlConnection con;
         private static string conString = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
+        public static int CurrentId = 0;
         /// <summary>
         /// Validates if there's a book record with the same title, author, publisher and year.
         /// </summary>
@@ -118,7 +119,7 @@ namespace LibraryManagement.Helper
             using (con = new SqlConnection(conString))
             {
                 SqlCommand cmd = new SqlCommand("SELECT * FROM Books WHERE BookId=@id", con);
-                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@id", CurrentId);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);

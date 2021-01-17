@@ -124,7 +124,11 @@ namespace LibraryManagement.Forms
             // 
             this.cbxType.FormattingEnabled = true;
             this.cbxType.Items.AddRange(new object[] {
+            "Audio Book",
+            "DVD",
+            "EBook",
             "Hardcover",
+            "Large Print",
             "Paperback"});
             this.cbxType.Location = new System.Drawing.Point(123, 225);
             this.cbxType.Name = "cbxType";
