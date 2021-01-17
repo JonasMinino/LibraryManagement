@@ -2,14 +2,16 @@
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace LibraryManagement.Helper
 {
-    public static class AddBookHelper
+    public static class BookHelper
     {
         private static SqlConnection con;
         private static string conString = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
@@ -95,5 +97,21 @@ namespace LibraryManagement.Helper
                 return cmd.ExecuteNonQuery();
             }
         }
+        /// <summary>
+        /// Retrieves the data from the books table and displays it in the data grid view. 
+        /// </summary>
+        /// <param name="dgv"></param>
+        public static void CurrentBooksData(DataGridView dgv)
+        {
+            using(con = new SqlConnection(conString))
+            {
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Books", con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dgv.DataSource = dt;
+            }
+        }
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryManagement.Helper;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,12 +17,29 @@ namespace LibraryManagement.Forms
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Loads data into the data grid view. 
+        /// Changes the background color of the checkedout cell if the book is checkedout or not. 
+        /// Bolds the text of the checkout cell. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ViewBooks_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'libaryDBDataSet.Books' table. You can move, or remove it, as needed.
-            this.booksTableAdapter.Fill(this.libaryDBDataSet.Books);
-
+            BookHelper.CurrentBooksData(dgvViewBooks); 
+            foreach(DataGridViewRow row in dgvViewBooks.Rows)
+            {
+                if (row.Cells["Checkedout"].Value.ToString() == "NO")
+                {
+                    row.Cells["Checkedout"].Style.BackColor = Color.FromArgb(184, 244, 191);
+                    row.Cells["Checkedout"].Style.Font = new Font(dgvViewBooks.Font, FontStyle.Bold);
+                }
+                else
+                {
+                    row.Cells["Checkedout"].Style.BackColor = Color.Salmon;
+                    row.Cells["Checkedout"].Style.Font = new Font(dgvViewBooks.Font, FontStyle.Bold);
+                }
+            }
         }
     }
 }

@@ -42,32 +42,31 @@ namespace LibraryManagement.Forms
             this.libaryDBDataSet = new LibraryManagement.LibaryDBDataSet();
             this.booksBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.booksTableAdapter = new LibraryManagement.LibaryDBDataSetTableAdapters.BooksTableAdapter();
-            this.bookIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.authorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.yearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.checkedoutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.libaryDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.booksBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.libaryDBDataSet1 = new LibraryManagement.LibaryDBDataSet1();
+            this.booksBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.booksTableAdapter1 = new LibraryManagement.LibaryDBDataSet1TableAdapters.BooksTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvViewBooks)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.libaryDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libaryDBDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libaryDBDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvViewBooks
             // 
-            this.dgvViewBooks.AutoGenerateColumns = false;
+            this.dgvViewBooks.AllowUserToAddRows = false;
+            this.dgvViewBooks.AllowUserToDeleteRows = false;
             this.dgvViewBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvViewBooks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.bookIdDataGridViewTextBoxColumn,
-            this.titleDataGridViewTextBoxColumn,
-            this.authorDataGridViewTextBoxColumn,
-            this.yearDataGridViewTextBoxColumn,
-            this.checkedoutDataGridViewTextBoxColumn});
-            this.dgvViewBooks.DataSource = this.booksBindingSource;
             this.dgvViewBooks.Location = new System.Drawing.Point(191, 67);
             this.dgvViewBooks.Name = "dgvViewBooks";
+            this.dgvViewBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvViewBooks.Size = new System.Drawing.Size(542, 272);
             this.dgvViewBooks.TabIndex = 0;
             // 
@@ -174,36 +173,29 @@ namespace LibraryManagement.Forms
             // 
             this.booksTableAdapter.ClearBeforeFill = true;
             // 
-            // bookIdDataGridViewTextBoxColumn
+            // libaryDBDataSetBindingSource
             // 
-            this.bookIdDataGridViewTextBoxColumn.DataPropertyName = "BookId";
-            this.bookIdDataGridViewTextBoxColumn.HeaderText = "BookId";
-            this.bookIdDataGridViewTextBoxColumn.Name = "bookIdDataGridViewTextBoxColumn";
-            this.bookIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.libaryDBDataSetBindingSource.DataSource = this.libaryDBDataSet;
+            this.libaryDBDataSetBindingSource.Position = 0;
             // 
-            // titleDataGridViewTextBoxColumn
+            // booksBindingSource1
             // 
-            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
-            this.titleDataGridViewTextBoxColumn.HeaderText = "Title";
-            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
+            this.booksBindingSource1.DataMember = "Books";
+            this.booksBindingSource1.DataSource = this.libaryDBDataSetBindingSource;
             // 
-            // authorDataGridViewTextBoxColumn
+            // libaryDBDataSet1
             // 
-            this.authorDataGridViewTextBoxColumn.DataPropertyName = "Author";
-            this.authorDataGridViewTextBoxColumn.HeaderText = "Author";
-            this.authorDataGridViewTextBoxColumn.Name = "authorDataGridViewTextBoxColumn";
+            this.libaryDBDataSet1.DataSetName = "LibaryDBDataSet1";
+            this.libaryDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // yearDataGridViewTextBoxColumn
+            // booksBindingSource2
             // 
-            this.yearDataGridViewTextBoxColumn.DataPropertyName = "Year";
-            this.yearDataGridViewTextBoxColumn.HeaderText = "Year";
-            this.yearDataGridViewTextBoxColumn.Name = "yearDataGridViewTextBoxColumn";
+            this.booksBindingSource2.DataMember = "Books";
+            this.booksBindingSource2.DataSource = this.libaryDBDataSet1;
             // 
-            // checkedoutDataGridViewTextBoxColumn
+            // booksTableAdapter1
             // 
-            this.checkedoutDataGridViewTextBoxColumn.DataPropertyName = "Checkedout";
-            this.checkedoutDataGridViewTextBoxColumn.HeaderText = "Checkedout";
-            this.checkedoutDataGridViewTextBoxColumn.Name = "checkedoutDataGridViewTextBoxColumn";
+            this.booksTableAdapter1.ClearBeforeFill = true;
             // 
             // ViewBooks
             // 
@@ -225,13 +217,15 @@ namespace LibraryManagement.Forms
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.libaryDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libaryDBDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libaryDBDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource2)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvViewBooks;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
@@ -243,10 +237,11 @@ namespace LibraryManagement.Forms
         private LibaryDBDataSet libaryDBDataSet;
         private System.Windows.Forms.BindingSource booksBindingSource;
         private LibaryDBDataSetTableAdapters.BooksTableAdapter booksTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bookIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn authorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn yearDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn checkedoutDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource libaryDBDataSetBindingSource;
+        private System.Windows.Forms.BindingSource booksBindingSource1;
+        private LibaryDBDataSet1 libaryDBDataSet1;
+        private System.Windows.Forms.BindingSource booksBindingSource2;
+        private LibaryDBDataSet1TableAdapters.BooksTableAdapter booksTableAdapter1;
+        public System.Windows.Forms.DataGridView dgvViewBooks;
     }
 }

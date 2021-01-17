@@ -65,6 +65,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BooksData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BooksData.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddBook.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,12 +106,17 @@
     <Compile Include="Forms\ViewBooks.Designer.cs">
       <DependentUpon>ViewBooks.cs</DependentUpon>
     </Compile>
-    <Compile Include="Helper\AddBookHelper.cs" />
+    <Compile Include="Helper\BookHelper.cs" />
     <Compile Include="Helper\LoginHelper.cs" />
     <Compile Include="LibaryDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LibaryDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LibaryDBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LibaryDBDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\User.cs" />
@@ -140,6 +150,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="BooksData.xsc">
+      <DependentUpon>BooksData.xsd</DependentUpon>
+    </None>
+    <None Include="BooksData.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BooksData.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="BooksData.xss">
+      <DependentUpon>BooksData.xsd</DependentUpon>
+    </None>
     <None Include="LibaryDBDataSet.xsc">
       <DependentUpon>LibaryDBDataSet.xsd</DependentUpon>
     </None>
@@ -150,6 +171,17 @@
     </None>
     <None Include="LibaryDBDataSet.xss">
       <DependentUpon>LibaryDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LibaryDBDataSet1.xsc">
+      <DependentUpon>LibaryDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="LibaryDBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LibaryDBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LibaryDBDataSet1.xss">
+      <DependentUpon>LibaryDBDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

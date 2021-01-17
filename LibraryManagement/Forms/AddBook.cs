@@ -43,13 +43,13 @@ namespace LibraryManagement.Forms
             if (txtTitle.Text == "" || txtAuthor.Text == "") MessageBox.Show("Are you mising the Title, or Author?", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
-                Book book = new Book(null, txtTitle.Text, txtAuthor.Text, txtPublisher.Text, txtYear.Text.ToString(), txtISBN.Text, cbxType.Text, 1, 0);
+                Book book = new Book(null, txtTitle.Text, txtAuthor.Text, txtPublisher.Text, txtYear.Text.ToString(), txtISBN.Text, cbxType.Text, 1, "NO");
 
                 //Checks if there is a record with the same Title, Author, and Publisher.//
-                if (AddBookHelper.ValidateBook(book))
+                if (BookHelper.ValidateBook(book))
                 {
                     DialogResult result = MessageBox.Show("There is already a copy of a book with the same Title, Author, Publisher, and Year. Are you entering another copy?", "Duplicate Book", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                    if (result == DialogResult.Yes) if (AddBookHelper.AddCopy(AddBookHelper.GetBookId(book)) > 0)
+                    if (result == DialogResult.Yes) if (BookHelper.AddCopy(BookHelper.GetBookId(book)) > 0)
                         {
                             DialogResult res = MessageBox.Show("You have added another copy of: " + txtTitle.Text + " by: " + txtAuthor.Text, "Successfuly Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -66,7 +66,7 @@ namespace LibraryManagement.Forms
                         }
                 }
                 else {//Message showing that a new record was added.//
-                    if (AddBookHelper.InsertBook(book) > 0) 
+                    if (BookHelper.InsertBook(book) > 0) 
                     {
                         DialogResult result = MessageBox.Show("A new book record has been added.", "Record Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         

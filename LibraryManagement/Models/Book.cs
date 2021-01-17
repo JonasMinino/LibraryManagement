@@ -16,9 +16,9 @@ namespace LibraryManagement.Models
         public string ISBN { get; set; }
         public string Type { get; set; }
         public int NumberOfCopies { get; set; }
-        public int CheckedOut { get; set; }
+        public string CheckedOut { get; set; }
 
-        public Book(Nullable<int> id, string title, string author, string publisher, string year, string isbn, string type, int copies, int checkout)
+        public Book(Nullable<int> id, string title, string author, string publisher, string year, string isbn, string type, int copies, string checkout)
         {
             BookId = id;
             Title = title;
