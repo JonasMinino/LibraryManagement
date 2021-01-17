@@ -36,5 +36,14 @@ namespace LibraryManagement.Forms
                 cmbType.SelectedIndex = cmbType.FindStringExact(row["Type"].ToString());
             }
         }
+        /// <summary>
+        /// Closes the Update Book form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
