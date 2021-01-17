@@ -17,7 +17,7 @@ namespace LibraryManagement.Forms
             InitializeComponent();
         }
         /// <summary>
-        /// Opens the Add New Book form if not open already. 
+        /// Opens the Add New Book form if not opened already. 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

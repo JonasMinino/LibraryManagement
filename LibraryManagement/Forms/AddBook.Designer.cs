@@ -40,13 +40,13 @@ namespace LibraryManagement.Forms
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtISBN = new System.Windows.Forms.TextBox();
+            this.txtYear = new System.Windows.Forms.TextBox();
             this.txtPublisher = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtAuthor = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtYear = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -112,7 +112,7 @@ namespace LibraryManagement.Forms
             this.btnCancel.Location = new System.Drawing.Point(225, 264);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(86, 32);
-            this.btnCancel.TabIndex = 1;
+            this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -125,7 +125,7 @@ namespace LibraryManagement.Forms
             this.btnAdd.Location = new System.Drawing.Point(123, 264);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(86, 32);
-            this.btnAdd.TabIndex = 1;
+            this.btnAdd.TabIndex = 6;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -139,7 +139,7 @@ namespace LibraryManagement.Forms
             this.cbxType.Location = new System.Drawing.Point(123, 225);
             this.cbxType.Name = "cbxType";
             this.cbxType.Size = new System.Drawing.Size(121, 21);
-            this.cbxType.TabIndex = 3;
+            this.cbxType.TabIndex = 5;
             // 
             // label7
             // 
@@ -176,14 +176,21 @@ namespace LibraryManagement.Forms
             this.txtISBN.Location = new System.Drawing.Point(123, 183);
             this.txtISBN.Name = "txtISBN";
             this.txtISBN.Size = new System.Drawing.Size(200, 20);
-            this.txtISBN.TabIndex = 1;
+            this.txtISBN.TabIndex = 4;
+            // 
+            // txtYear
+            // 
+            this.txtYear.Location = new System.Drawing.Point(123, 144);
+            this.txtYear.Name = "txtYear";
+            this.txtYear.Size = new System.Drawing.Size(200, 20);
+            this.txtYear.TabIndex = 3;
             // 
             // txtPublisher
             // 
             this.txtPublisher.Location = new System.Drawing.Point(123, 99);
             this.txtPublisher.Name = "txtPublisher";
             this.txtPublisher.Size = new System.Drawing.Size(200, 20);
-            this.txtPublisher.TabIndex = 1;
+            this.txtPublisher.TabIndex = 2;
             // 
             // label4
             // 
@@ -217,7 +224,7 @@ namespace LibraryManagement.Forms
             this.txtTitle.Location = new System.Drawing.Point(123, 15);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(200, 20);
-            this.txtTitle.TabIndex = 1;
+            this.txtTitle.TabIndex = 0;
             // 
             // label2
             // 
@@ -228,13 +235,6 @@ namespace LibraryManagement.Forms
             this.label2.Size = new System.Drawing.Size(50, 26);
             this.label2.TabIndex = 0;
             this.label2.Text = "Title";
-            // 
-            // txtYear
-            // 
-            this.txtYear.Location = new System.Drawing.Point(123, 144);
-            this.txtYear.Name = "txtYear";
-            this.txtYear.Size = new System.Drawing.Size(200, 20);
-            this.txtYear.TabIndex = 1;
             // 
             // AddBook
             // 
