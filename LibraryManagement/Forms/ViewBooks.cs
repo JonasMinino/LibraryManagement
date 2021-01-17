@@ -41,5 +41,14 @@ namespace LibraryManagement.Forms
                 }
             }
         }
+        /// <summary>
+        /// Closes the current form and opens the Add Book Form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            this.Hide(); (new AddBook()).ShowDialog(); this.Close();
+        }
     }
 }
