@@ -86,5 +86,14 @@ namespace LibraryManagement.Forms
         {
             this.Close();
         }
+        /// <summary>
+        /// Refreshes the data grid view if there is no text in the search textbox. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "") BookHelper.CurrentBooksData(dgvViewBooks);
+        }
     }
 }

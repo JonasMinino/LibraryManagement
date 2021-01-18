@@ -37,6 +37,7 @@ namespace LibraryManagement.Forms
             this.btnCancel = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.libaryDBDataSet = new LibraryManagement.LibaryDBDataSet();
             this.booksBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -47,7 +48,6 @@ namespace LibraryManagement.Forms
             this.booksBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.booksTableAdapter1 = new LibraryManagement.LibaryDBDataSet1TableAdapters.BooksTableAdapter();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvViewBooks)).BeginInit();
             this.panel1.SuspendLayout();
@@ -147,6 +147,17 @@ namespace LibraryManagement.Forms
             this.panel2.Size = new System.Drawing.Size(732, 67);
             this.panel2.TabIndex = 5;
             // 
+            // txtSearch
+            // 
+            this.txtSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtSearch.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(390, 25);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(202, 27);
+            this.txtSearch.TabIndex = 1;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -204,16 +215,6 @@ namespace LibraryManagement.Forms
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txtSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtSearch.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(353, 25);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(241, 27);
-            this.txtSearch.TabIndex = 1;
             // 
             // btnSearch
             // 
