@@ -184,5 +184,31 @@ namespace LibraryManagement.Helper
                 return cmd.ExecuteNonQuery();
             }
         }
+        /// <summary>
+        /// Gets the list of titles, authors, publishers, and years from the books table. 
+        /// </summary>
+        /// <returns></returns>
+        public static List<string> GetSourceList()
+        {
+            List<string> list = new List<string>();
+
+            using (con = new SqlConnection(conString))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT Title, Author, Publisher, Year FROM Books", con);
+                SqlDataReader rdr = cmd.ExecuteReader();
+                if (rdr.HasRows)
+                {
+                    while (rdr.Read())
+                    {
+                        list.Add(rdr["Title"].ToString());
+                        list.Add(rdr["Author"].ToString());
+                        list.Add(rdr["Publisher"].ToString());
+                        list.Add(rdr["Year"].ToString());
+                    }
+                }
+            }
+            return list;
+        }
     }
 }

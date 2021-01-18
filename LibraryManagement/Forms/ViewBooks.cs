@@ -24,7 +24,17 @@ namespace LibraryManagement.Forms
         /// <param name="e"></param>
         private void ViewBooks_Load(object sender, EventArgs e)
         {
-            BookHelper.CurrentBooksData(dgvViewBooks); 
+            BookHelper.CurrentBooksData(dgvViewBooks);
+            AddAutoCompleteSource();
+        }
+        /// <summary>
+        /// Adds the autocomplete source for the search textbox.
+        /// </summary>
+        private void AddAutoCompleteSource()
+        {
+            AutoCompleteStringCollection source = new AutoCompleteStringCollection();
+            source.AddRange(BookHelper.GetSourceList().ToArray());
+            txtSearch.AutoCompleteCustomSource = source;
         }
         /// <summary>
         /// Closes the current form and opens the Add Book Form

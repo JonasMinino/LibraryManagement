@@ -47,6 +47,8 @@ namespace LibraryManagement.Forms
             this.booksBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.booksTableAdapter1 = new LibraryManagement.LibaryDBDataSet1TableAdapters.BooksTableAdapter();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvViewBooks)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -137,7 +139,9 @@ namespace LibraryManagement.Forms
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(146)))));
+            this.panel2.Controls.Add(this.txtSearch);
             this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.btnSearch);
             this.panel2.Location = new System.Drawing.Point(1, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(732, 67);
@@ -147,7 +151,7 @@ namespace LibraryManagement.Forms
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(25, 9);
+            this.label2.Location = new System.Drawing.Point(149, 18);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(165, 33);
             this.label2.TabIndex = 0;
@@ -201,6 +205,30 @@ namespace LibraryManagement.Forms
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
+            // txtSearch
+            // 
+            this.txtSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtSearch.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(353, 25);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(241, 27);
+            this.txtSearch.TabIndex = 1;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.Gold;
+            this.btnSearch.Location = new System.Drawing.Point(611, 20);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(90, 34);
+            this.btnSearch.TabIndex = 2;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // ViewBooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -249,5 +277,7 @@ namespace LibraryManagement.Forms
         private System.Windows.Forms.BindingSource booksBindingSource2;
         private LibaryDBDataSet1TableAdapters.BooksTableAdapter booksTableAdapter1;
         public System.Windows.Forms.DataGridView dgvViewBooks;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Button btnSearch;
     }
 }
