@@ -25,5 +25,14 @@ namespace LibraryManagement.Forms
         {
             if (Application.OpenForms["AddBook"]==null)(new AddBook()).ShowDialog();           
         }
+        /// <summary>
+        /// Opens a new View Books form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void viewBooksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            (new ViewBooks()).ShowDialog();
+        }
     }
 }
