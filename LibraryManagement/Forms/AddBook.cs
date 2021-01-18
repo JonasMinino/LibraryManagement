@@ -79,6 +79,10 @@ namespace LibraryManagement.Forms
                             txtPublisher.Clear();
                             txtISBN.Clear();
                             cbxType.SelectedIndex = -1;
+
+                            //Refreshes the View Books form data grid view.//
+                            ViewBooks viewBooks = (ViewBooks)Application.OpenForms["ViewBooks"];
+                            BookHelper.CurrentBooksData(viewBooks.dgvViewBooks);
                         }
                     }
                 }

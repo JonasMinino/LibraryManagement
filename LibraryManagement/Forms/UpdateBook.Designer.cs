@@ -32,13 +32,16 @@ namespace LibraryManagement.Forms
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cmbType = new System.Windows.Forms.ComboBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.cmbCheckedOut = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.txtCopies = new System.Windows.Forms.TextBox();
             this.txtISBN = new System.Windows.Forms.TextBox();
             this.txtYear = new System.Windows.Forms.TextBox();
             this.txtPublisher = new System.Windows.Forms.TextBox();
@@ -48,9 +51,6 @@ namespace LibraryManagement.Forms
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cmbType = new System.Windows.Forms.ComboBox();
-            this.txtCopies = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -100,6 +100,21 @@ namespace LibraryManagement.Forms
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(363, 396);
             this.panel2.TabIndex = 3;
+            // 
+            // cmbType
+            // 
+            this.cmbType.FormattingEnabled = true;
+            this.cmbType.Items.AddRange(new object[] {
+            "Audio Book",
+            "DVD",
+            "EBook",
+            "Hardcover",
+            "Large Print",
+            "Paperback"});
+            this.cmbType.Location = new System.Drawing.Point(149, 215);
+            this.cmbType.Name = "cmbType";
+            this.cmbType.Size = new System.Drawing.Size(121, 21);
+            this.cmbType.TabIndex = 8;
             // 
             // btnCancel
             // 
@@ -159,6 +174,16 @@ namespace LibraryManagement.Forms
             this.label7.TabIndex = 0;
             this.label7.Text = "Type";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(21, 249);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(69, 26);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Copies";
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -178,6 +203,13 @@ namespace LibraryManagement.Forms
             this.label5.Size = new System.Drawing.Size(49, 26);
             this.label5.TabIndex = 0;
             this.label5.Text = "Year";
+            // 
+            // txtCopies
+            // 
+            this.txtCopies.Location = new System.Drawing.Point(149, 256);
+            this.txtCopies.Name = "txtCopies";
+            this.txtCopies.Size = new System.Drawing.Size(121, 20);
+            this.txtCopies.TabIndex = 4;
             // 
             // txtISBN
             // 
@@ -253,38 +285,6 @@ namespace LibraryManagement.Forms
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
-            // 
-            // cmbType
-            // 
-            this.cmbType.FormattingEnabled = true;
-            this.cmbType.Items.AddRange(new object[] {
-            "Audio Book",
-            "DVD",
-            "EBook",
-            "Hardcover",
-            "Large Print",
-            "Paperback"});
-            this.cmbType.Location = new System.Drawing.Point(149, 215);
-            this.cmbType.Name = "cmbType";
-            this.cmbType.Size = new System.Drawing.Size(121, 21);
-            this.cmbType.TabIndex = 8;
-            // 
-            // txtCopies
-            // 
-            this.txtCopies.Location = new System.Drawing.Point(149, 256);
-            this.txtCopies.Name = "txtCopies";
-            this.txtCopies.Size = new System.Drawing.Size(121, 20);
-            this.txtCopies.TabIndex = 4;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(21, 249);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(69, 26);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Copies";
             // 
             // UpdateBook
             // 

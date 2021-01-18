@@ -62,10 +62,14 @@ namespace LibraryManagement.Forms
             if (BookHelper.UpdateRecord(book) > 0)
             {
                 DialogResult result = MessageBox.Show("The record for: " + book.Title + " by: " + book.Author + " has been updated.", "Update Succesful!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                ViewBooks viewBooks = (ViewBooks)Application.OpenForms["ViewBooks"];
-                BookHelper.CurrentBooksData(viewBooks.dgvViewBooks);
-                this.Close();
+                if (result == DialogResult.OK)
+                {
+                    ViewBooks viewBooks = (ViewBooks)Application.OpenForms["ViewBooks"];
+                    BookHelper.CurrentBooksData(viewBooks.dgvViewBooks);
+                    this.Close();
+                }
             }
         }
+
     }
 }

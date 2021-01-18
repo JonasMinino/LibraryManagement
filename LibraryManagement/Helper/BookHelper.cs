@@ -100,7 +100,9 @@ namespace LibraryManagement.Helper
             }
         }
         /// <summary>
-        /// Retrieves the data from the books table and displays it in the data grid view. 
+        /// Retrieves the data from the books table and displays it in the data grid view.
+        /// Changes the background color of the checkedout cell if the book is checkedout or not. 
+        /// Bolds the text of the checkout cell. 
         /// </summary>
         /// <param name="dgv"></param>
         public static void CurrentBooksData(DataGridView dgv)
@@ -168,6 +170,19 @@ namespace LibraryManagement.Helper
                 return cmd.ExecuteNonQuery();
             }
         }
-
+        /// <summary>
+        /// Deletes the record of the selected row from the books table by id.
+        /// </summary>
+        /// <param name="id"></param>
+        public static int DeleteRecord()
+        {
+            using(con = new SqlConnection(conString))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("DELETE FROM Books WHERE BookId=@id", con);
+                cmd.Parameters.AddWithValue("@id", CurrentId);
+                return cmd.ExecuteNonQuery();
+            }
+        }
     }
 }

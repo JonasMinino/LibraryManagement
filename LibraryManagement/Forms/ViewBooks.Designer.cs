@@ -107,6 +107,7 @@ namespace LibraryManagement.Forms
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnCancel
             // 
@@ -120,6 +121,7 @@ namespace LibraryManagement.Forms
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // panel1
             // 
@@ -145,7 +147,7 @@ namespace LibraryManagement.Forms
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(281, 9);
+            this.label2.Location = new System.Drawing.Point(25, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(165, 33);
             this.label2.TabIndex = 0;

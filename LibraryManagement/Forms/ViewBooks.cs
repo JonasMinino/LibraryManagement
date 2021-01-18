@@ -19,8 +19,6 @@ namespace LibraryManagement.Forms
         }
         /// <summary>
         /// Loads data into the data grid view. 
-        /// Changes the background color of the checkedout cell if the book is checkedout or not. 
-        /// Bolds the text of the checkout cell. 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -35,7 +33,7 @@ namespace LibraryManagement.Forms
         /// <param name="e"></param>
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            this.Hide(); (new AddBook()).ShowDialog(); this.Close();
+            (new AddBook()).ShowDialog(); 
         }
         /// <summary>
         /// Changes the value of the current id variable.
@@ -48,6 +46,35 @@ namespace LibraryManagement.Forms
         {
             BookHelper.CurrentId = int.Parse(dgvViewBooks.CurrentRow.Cells["BookId"].Value.ToString());
             (new UpdateBook()).ShowDialog();
+        }
+        /// <summary>
+        /// Asks the user if they are sure they want to delete the record. 
+        /// Deletes the selected record.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            //Gets the selected row id, title and author//
+            BookHelper.CurrentId = int.Parse(dgvViewBooks.CurrentRow.Cells["BookId"].Value.ToString());
+            string title = dgvViewBooks.CurrentRow.Cells["Title"].Value.ToString();
+            string author = dgvViewBooks.CurrentRow.Cells["Author"].Value.ToString();
+
+            //Asks the user if they are sure they want to delete the record.//
+            DialogResult result = MessageBox.Show("Are you sure you want to delete " + title + " by: " + author +"?", "Delete Record", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            //Deletes the record and updates the data grid view//
+            if (result == DialogResult.Yes) if (BookHelper.DeleteRecord() > 0) BookHelper.CurrentBooksData(dgvViewBooks);           
+
+        }
+        /// <summary>
+        /// Closes the current form//
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
