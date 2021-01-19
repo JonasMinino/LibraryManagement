@@ -27,13 +27,31 @@ namespace LibraryManagement.Forms
             BookHelper.LoadActive(dgvIssueBook);
         }
         /// <summary>
-        /// Reloads the data if the search text box is empty
+        /// Reloads the data if the search bar is empty.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             if (txtSearch.Text=="") BookHelper.LoadActive(dgvIssueBook);
+        }
+        /// <summary>
+        /// Displays the records that match the text in the search bar. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            BookHelper.SearchRecords(txtSearch.Text, dgvIssueBook);
+        }
+        /// <summary>
+        /// Closes the Issue Book form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
