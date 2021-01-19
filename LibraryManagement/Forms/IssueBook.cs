@@ -18,15 +18,14 @@ namespace LibraryManagement.Forms
             InitializeComponent();
         }
         /// <summary>
-        /// Loads the book ids into the id combo box.
-        /// Sets the due date to 10 days from today. 
+        ///Loads active books into the data grid view. 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void IssueBook_Load(object sender, EventArgs e)
         {
-            cmbBookId.DataSource = BookHelper.GetIdList().ToArray();
-            dtpDueDate.Value = dtpDueDate.Value.AddDays(10);
+            
         }
+        
     }
 }
