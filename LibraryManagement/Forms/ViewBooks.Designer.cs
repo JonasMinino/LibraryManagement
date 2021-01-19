@@ -55,7 +55,7 @@ namespace LibraryManagement.Forms
             this.dgvViewBooks.Name = "dgvViewBooks";
             this.dgvViewBooks.ReadOnly = true;
             this.dgvViewBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvViewBooks.Size = new System.Drawing.Size(542, 272);
+            this.dgvViewBooks.Size = new System.Drawing.Size(542, 217);
             this.dgvViewBooks.TabIndex = 0;
             // 
             // btnAdd
@@ -117,7 +117,7 @@ namespace LibraryManagement.Forms
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.btnCancel);
             this.panel1.Controls.Add(this.btnUpdate);
-            this.panel1.Location = new System.Drawing.Point(191, 339);
+            this.panel1.Location = new System.Drawing.Point(191, 285);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(542, 61);
             this.panel1.TabIndex = 4;
@@ -173,7 +173,7 @@ namespace LibraryManagement.Forms
             this.pictureBox1.Image = global::LibraryManagement.Properties.Resources.bookstack;
             this.pictureBox1.Location = new System.Drawing.Point(2, 67);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(189, 333);
+            this.pictureBox1.Size = new System.Drawing.Size(189, 279);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -183,7 +183,7 @@ namespace LibraryManagement.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(248)))), ((int)(((byte)(93)))));
-            this.ClientSize = new System.Drawing.Size(732, 400);
+            this.ClientSize = new System.Drawing.Size(732, 347);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

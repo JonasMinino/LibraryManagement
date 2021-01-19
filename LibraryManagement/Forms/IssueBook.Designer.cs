@@ -30,30 +30,67 @@ namespace LibraryManagement.Forms
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cmbStudentId = new System.Windows.Forms.ComboBox();
+            this.dgvIssueBook = new System.Windows.Forms.DataGridView();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnIssue = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dgvIssueBook = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dtpDueDate = new System.Windows.Forms.DateTimePicker();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIssueBook)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(248)))), ((int)(((byte)(93)))));
+            this.panel2.Controls.Add(this.dtpDueDate);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.cmbStudentId);
             this.panel2.Controls.Add(this.dgvIssueBook);
             this.panel2.Controls.Add(this.btnCancel);
             this.panel2.Controls.Add(this.btnIssue);
             this.panel2.Location = new System.Drawing.Point(226, 67);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(506, 232);
+            this.panel2.Size = new System.Drawing.Size(506, 314);
             this.panel2.TabIndex = 4;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(70, 173);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(81, 19);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Student Id";
+            // 
+            // cmbStudentId
+            // 
+            this.cmbStudentId.FormattingEnabled = true;
+            this.cmbStudentId.Location = new System.Drawing.Point(164, 173);
+            this.cmbStudentId.Name = "cmbStudentId";
+            this.cmbStudentId.Size = new System.Drawing.Size(200, 21);
+            this.cmbStudentId.TabIndex = 11;
+            // 
+            // dgvIssueBook
+            // 
+            this.dgvIssueBook.AllowUserToAddRows = false;
+            this.dgvIssueBook.AllowUserToDeleteRows = false;
+            this.dgvIssueBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvIssueBook.Location = new System.Drawing.Point(0, 2);
+            this.dgvIssueBook.Name = "dgvIssueBook";
+            this.dgvIssueBook.ReadOnly = true;
+            this.dgvIssueBook.Size = new System.Drawing.Size(506, 150);
+            this.dgvIssueBook.TabIndex = 8;
             // 
             // btnCancel
             // 
@@ -61,7 +98,7 @@ namespace LibraryManagement.Forms
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnCancel.Location = new System.Drawing.Point(280, 182);
+            this.btnCancel.Location = new System.Drawing.Point(280, 262);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(86, 32);
             this.btnCancel.TabIndex = 7;
@@ -74,33 +111,23 @@ namespace LibraryManagement.Forms
             this.btnIssue.BackColor = System.Drawing.Color.Gold;
             this.btnIssue.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnIssue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIssue.Location = new System.Drawing.Point(126, 182);
+            this.btnIssue.Location = new System.Drawing.Point(165, 262);
             this.btnIssue.Name = "btnIssue";
             this.btnIssue.Size = new System.Drawing.Size(86, 32);
             this.btnIssue.TabIndex = 6;
             this.btnIssue.Text = "Issue";
             this.btnIssue.UseVisualStyleBackColor = false;
+            this.btnIssue.Click += new System.EventHandler(this.btnIssue_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::LibraryManagement.Properties.Resources.UniquePortable;
             this.pictureBox1.Location = new System.Drawing.Point(0, 67);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(226, 232);
+            this.pictureBox1.Size = new System.Drawing.Size(226, 311);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
-            // 
-            // dgvIssueBook
-            // 
-            this.dgvIssueBook.AllowUserToAddRows = false;
-            this.dgvIssueBook.AllowUserToDeleteRows = false;
-            this.dgvIssueBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvIssueBook.Location = new System.Drawing.Point(0, 2);
-            this.dgvIssueBook.Name = "dgvIssueBook";
-            this.dgvIssueBook.ReadOnly = true;
-            this.dgvIssueBook.Size = new System.Drawing.Size(506, 150);
-            this.dgvIssueBook.TabIndex = 8;
             // 
             // panel1
             // 
@@ -148,11 +175,28 @@ namespace LibraryManagement.Forms
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(70, 213);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 19);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Due Date";
+            // 
+            // dtpDueDate
+            // 
+            this.dtpDueDate.Location = new System.Drawing.Point(164, 211);
+            this.dtpDueDate.Name = "dtpDueDate";
+            this.dtpDueDate.Size = new System.Drawing.Size(200, 20);
+            this.dtpDueDate.TabIndex = 12;
+            // 
             // IssueBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(731, 301);
+            this.ClientSize = new System.Drawing.Size(731, 379);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel2);
@@ -160,8 +204,9 @@ namespace LibraryManagement.Forms
             this.Text = "IssueBook";
             this.Load += new System.EventHandler(this.IssueBook_Load);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIssueBook)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -178,5 +223,9 @@ namespace LibraryManagement.Forms
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cmbStudentId;
+        private System.Windows.Forms.DateTimePicker dtpDueDate;
+        private System.Windows.Forms.Label label1;
     }
 }

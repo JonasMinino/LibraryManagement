@@ -19,12 +19,17 @@ namespace LibraryManagement.Forms
         }
         /// <summary>
         ///Loads active books into the data grid view. 
+        ///Load student ids into the id combo box.
+        ///Sets the due date to 10 days from today. 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void IssueBook_Load(object sender, EventArgs e)
         {
             BookHelper.LoadActive(dgvIssueBook);
+            //TODO: load student ids into the id combobox.
+            dtpDueDate.Value = dtpDueDate.Value.AddDays(10);
+
         }
         /// <summary>
         /// Reloads the data if the search bar is empty.
@@ -53,5 +58,15 @@ namespace LibraryManagement.Forms
         {
             this.Close();
         }
+        /// <summary>
+        /// Issues the book to a specific student.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnIssue_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

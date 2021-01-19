@@ -118,15 +118,15 @@ namespace LibraryManagement.Helper
                 dgv.DataSource = dt;
                 foreach (DataGridViewRow row in dgv.Rows)
                 {
-                    if (row.Cells["Checkedout"].Value.ToString() == "NO")
+                    if (int.Parse(row.Cells["Available"].Value.ToString()) > 0)
                     {
-                        row.Cells["Checkedout"].Style.BackColor = Color.FromArgb(184, 244, 191);
-                        row.Cells["Checkedout"].Style.Font = new Font(dgv.Font, FontStyle.Bold);
+                        row.Cells["Available"].Style.BackColor = Color.FromArgb(184, 244, 191);
+                        row.Cells["Available"].Style.Font = new Font(dgv.Font, FontStyle.Bold);
                     }
                     else
                     {
-                        row.Cells["Checkedout"].Style.BackColor = Color.Salmon;
-                        row.Cells["Checkedout"].Style.Font = new Font(dgv.Font, FontStyle.Bold);
+                        row.Cells["Available"].Style.BackColor = Color.Salmon;
+                        row.Cells["Available"].Style.Font = new Font(dgv.Font, FontStyle.Bold);
                     }
                 }
             }
@@ -261,23 +261,23 @@ namespace LibraryManagement.Helper
             using(con = new SqlConnection(conString))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Books WHERE Checkedout!=@check", con);
-                cmd.Parameters.AddWithValue("check", "YES");
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Books WHERE Available>@value", con);
+                cmd.Parameters.AddWithValue("value", 0);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 dgv.DataSource = dt;
                 foreach (DataGridViewRow row in dgv.Rows)
                 {
-                    if (row.Cells["Checkedout"].Value.ToString() == "NO")
+                    if (int.Parse(row.Cells["Available"].Value.ToString()) > 0)
                     {
-                        row.Cells["Checkedout"].Style.BackColor = Color.FromArgb(184, 244, 191);
-                        row.Cells["Checkedout"].Style.Font = new Font(dgv.Font, FontStyle.Bold);
+                        row.Cells["Available"].Style.BackColor = Color.FromArgb(184, 244, 191);
+                        row.Cells["Available"].Style.Font = new Font(dgv.Font, FontStyle.Bold);
                     }
                     else
                     {
-                        row.Cells["Checkedout"].Style.BackColor = Color.Salmon;
-                        row.Cells["Checkedout"].Style.Font = new Font(dgv.Font, FontStyle.Bold);
+                        row.Cells["Available"].Style.BackColor = Color.Salmon;
+                        row.Cells["Available"].Style.Font = new Font(dgv.Font, FontStyle.Bold);
                     }
                 }
             }

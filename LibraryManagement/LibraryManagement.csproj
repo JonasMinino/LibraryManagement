@@ -210,6 +210,10 @@
     <None Include="Resources\typing.gif" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\UniquePortable.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Books.Table.sql" />
     <Content Include="LibaryDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -217,7 +221,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>LibaryDB.mdf</DependentUpon>
     </Content>
-    <None Include="Resources\UniquePortable.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
