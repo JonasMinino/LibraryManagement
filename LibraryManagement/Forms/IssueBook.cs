@@ -19,15 +19,18 @@ namespace LibraryManagement.Forms
         }
         /// <summary>
         ///Loads active books into the data grid view. 
-        ///Load student ids into the id combo box.
+        ///Load selected student ids into the id combo box.
+        ///Loads student names in the student name combo box.
         ///Sets the due date to 10 days from today. 
+        ///Initializes the id combo box to index -1.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void IssueBook_Load(object sender, EventArgs e)
         {
             BookHelper.LoadActive(dgvIssueBook);
-            //TODO: load student ids into the id combobox.
+            StudentHelper.LoadNames(cmbStudentName);
+            cmbId.SelectedIndex = -1;
             dtpDueDate.Value = dtpDueDate.Value.AddDays(10);
 
         }
@@ -67,6 +70,15 @@ namespace LibraryManagement.Forms
         {
 
         }
-
+        /// <summary>
+        /// Populates the id combo box based on the name picked from the student name combo box. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cmbStudentName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbStudentName.SelectedIndex > -1)
+                StudentHelper.LoadIds(cmbStudentName.SelectedItem.ToString(), cmbId);
+        }
     }
 }

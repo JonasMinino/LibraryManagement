@@ -115,7 +115,9 @@
     </Compile>
     <Compile Include="Helper\BookHelper.cs" />
     <Compile Include="Helper\LoginHelper.cs" />
+    <Compile Include="Helper\StudentHelper.cs" />
     <Compile Include="Models\Book.cs" />
+    <Compile Include="Models\Student.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

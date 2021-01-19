@@ -30,8 +30,10 @@ namespace LibraryManagement.Forms
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dtpDueDate = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.cmbStudentId = new System.Windows.Forms.ComboBox();
+            this.cmbStudentName = new System.Windows.Forms.ComboBox();
             this.dgvIssueBook = new System.Windows.Forms.DataGridView();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnIssue = new System.Windows.Forms.Button();
@@ -40,8 +42,7 @@ namespace LibraryManagement.Forms
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dtpDueDate = new System.Windows.Forms.DateTimePicker();
+            this.cmbId = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIssueBook)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -51,10 +52,11 @@ namespace LibraryManagement.Forms
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(248)))), ((int)(((byte)(93)))));
+            this.panel2.Controls.Add(this.cmbId);
             this.panel2.Controls.Add(this.dtpDueDate);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.cmbStudentId);
+            this.panel2.Controls.Add(this.cmbStudentName);
             this.panel2.Controls.Add(this.dgvIssueBook);
             this.panel2.Controls.Add(this.btnCancel);
             this.panel2.Controls.Add(this.btnIssue);
@@ -63,23 +65,41 @@ namespace LibraryManagement.Forms
             this.panel2.Size = new System.Drawing.Size(506, 314);
             this.panel2.TabIndex = 4;
             // 
+            // dtpDueDate
+            // 
+            this.dtpDueDate.Location = new System.Drawing.Point(164, 211);
+            this.dtpDueDate.Name = "dtpDueDate";
+            this.dtpDueDate.Size = new System.Drawing.Size(200, 20);
+            this.dtpDueDate.TabIndex = 12;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(70, 213);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 19);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Due Date";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(70, 173);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 19);
+            this.label3.Size = new System.Drawing.Size(64, 19);
             this.label3.TabIndex = 10;
-            this.label3.Text = "Student Id";
+            this.label3.Text = "Student";
             // 
-            // cmbStudentId
+            // cmbStudentName
             // 
-            this.cmbStudentId.FormattingEnabled = true;
-            this.cmbStudentId.Location = new System.Drawing.Point(164, 173);
-            this.cmbStudentId.Name = "cmbStudentId";
-            this.cmbStudentId.Size = new System.Drawing.Size(200, 21);
-            this.cmbStudentId.TabIndex = 11;
+            this.cmbStudentName.FormattingEnabled = true;
+            this.cmbStudentName.Location = new System.Drawing.Point(164, 173);
+            this.cmbStudentName.Name = "cmbStudentName";
+            this.cmbStudentName.Size = new System.Drawing.Size(200, 21);
+            this.cmbStudentName.TabIndex = 11;
+            this.cmbStudentName.SelectedIndexChanged += new System.EventHandler(this.cmbStudentName_SelectedIndexChanged);
             // 
             // dgvIssueBook
             // 
@@ -175,22 +195,15 @@ namespace LibraryManagement.Forms
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // label1
+            // cmbId
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(70, 213);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 19);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Due Date";
-            // 
-            // dtpDueDate
-            // 
-            this.dtpDueDate.Location = new System.Drawing.Point(164, 211);
-            this.dtpDueDate.Name = "dtpDueDate";
-            this.dtpDueDate.Size = new System.Drawing.Size(200, 20);
-            this.dtpDueDate.TabIndex = 12;
+            this.cmbId.FormattingEnabled = true;
+            this.cmbId.Location = new System.Drawing.Point(385, 173);
+            this.cmbId.Name = "cmbId";
+            this.cmbId.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.cmbId.Size = new System.Drawing.Size(73, 21);
+            this.cmbId.TabIndex = 13;
+            this.cmbId.Text = "ID";
             // 
             // IssueBook
             // 
@@ -224,8 +237,9 @@ namespace LibraryManagement.Forms
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cmbStudentId;
+        private System.Windows.Forms.ComboBox cmbStudentName;
         private System.Windows.Forms.DateTimePicker dtpDueDate;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbId;
     }
 }
