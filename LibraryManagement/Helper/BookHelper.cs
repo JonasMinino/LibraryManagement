@@ -129,7 +129,6 @@ namespace LibraryManagement.Helper
                         row.Cells["Checkedout"].Style.Font = new Font(dgv.Font, FontStyle.Bold);
                     }
                 }
-
             }
         }
         /// <summary>
@@ -252,6 +251,36 @@ namespace LibraryManagement.Helper
                 }
             }
             return list;
+        }
+        /// <summary>
+        /// Loads the active books that haven't been checked out into a data grid view. 
+        /// </summary>
+        /// <param name="dgv"></param>
+        public static void LoadActive(DataGridView dgv)
+        {
+            using(con = new SqlConnection(conString))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Books WHERE Checkedout!=@check", con);
+                cmd.Parameters.AddWithValue("check", "YES");
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dgv.DataSource = dt;
+                foreach (DataGridViewRow row in dgv.Rows)
+                {
+                    if (row.Cells["Checkedout"].Value.ToString() == "NO")
+                    {
+                        row.Cells["Checkedout"].Style.BackColor = Color.FromArgb(184, 244, 191);
+                        row.Cells["Checkedout"].Style.Font = new Font(dgv.Font, FontStyle.Bold);
+                    }
+                    else
+                    {
+                        row.Cells["Checkedout"].Style.BackColor = Color.Salmon;
+                        row.Cells["Checkedout"].Style.Font = new Font(dgv.Font, FontStyle.Bold);
+                    }
+                }
+            }
         }
     }
 }

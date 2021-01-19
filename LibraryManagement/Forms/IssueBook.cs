@@ -24,8 +24,16 @@ namespace LibraryManagement.Forms
         /// <param name="e"></param>
         private void IssueBook_Load(object sender, EventArgs e)
         {
-            
+            BookHelper.LoadActive(dgvIssueBook);
         }
-        
+        /// <summary>
+        /// Reloads the data if the search text box is empty
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (txtSearch.Text=="") BookHelper.LoadActive(dgvIssueBook);
+        }
     }
 }
