@@ -234,5 +234,24 @@ namespace LibraryManagement.Helper
             }
 
         }
+        /// <summary>
+        /// Returns a list of ids in the Books table.
+        /// </summary>
+        /// <returns></returns>
+        public static List<int> GetIdList()
+        {
+            List<int> list = new List<int>();
+
+            using(con = new SqlConnection(conString))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Books", con);
+                using (SqlDataReader rdr = cmd.ExecuteReader())
+                {
+                    if(rdr.HasRows) while (rdr.Read()){ list.Add(int.Parse(rdr["BookId"].ToString())); }
+                }
+            }
+            return list;
+        }
     }
 }

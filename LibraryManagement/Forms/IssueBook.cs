@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryManagement.Helper;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,17 @@ namespace LibraryManagement.Forms
         public IssueBook()
         {
             InitializeComponent();
+        }
+        /// <summary>
+        /// Loads the book ids into the id combo box.
+        /// Sets the due date to 10 days from today. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void IssueBook_Load(object sender, EventArgs e)
+        {
+            cmbBookId.DataSource = BookHelper.GetIdList().ToArray();
+            dtpDueDate.Value = dtpDueDate.Value.AddDays(10);
         }
     }
 }

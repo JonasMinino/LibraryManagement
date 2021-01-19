@@ -97,6 +97,7 @@ namespace LibraryManagement.Forms
             this.issueBookToolStripMenuItem.Name = "issueBookToolStripMenuItem";
             this.issueBookToolStripMenuItem.Size = new System.Drawing.Size(209, 38);
             this.issueBookToolStripMenuItem.Text = "Issue Book";
+            this.issueBookToolStripMenuItem.Click += new System.EventHandler(this.issueBookToolStripMenuItem_Click);
             // 
             // returnBookToolStripMenuItem
             // 

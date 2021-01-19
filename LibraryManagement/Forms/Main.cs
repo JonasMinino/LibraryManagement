@@ -34,5 +34,14 @@ namespace LibraryManagement.Forms
         {
             (new ViewBooks()).ShowDialog();
         }
+        /// <summary>
+        /// Opens the Issue Book form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void issueBookToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            (new IssueBook()).ShowDialog();
+        }
     }
 }
