@@ -35,7 +35,6 @@ namespace LibraryManagement.Forms
             this.viewBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.issueBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.returnBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.completeDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewStudentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewStudentInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.studentsInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,8 +59,7 @@ namespace LibraryManagement.Forms
             this.addNewBookToolStripMenuItem,
             this.viewBooksToolStripMenuItem,
             this.issueBookToolStripMenuItem,
-            this.returnBookToolStripMenuItem,
-            this.completeDetailsToolStripMenuItem});
+            this.returnBookToolStripMenuItem});
             this.booksToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.booksToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.booksToolStripMenuItem.Image = global::LibraryManagement.Properties.Resources.open_book;
@@ -77,7 +75,7 @@ namespace LibraryManagement.Forms
             this.addNewBookToolStripMenuItem.Image = global::LibraryManagement.Properties.Resources.add;
             this.addNewBookToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.addNewBookToolStripMenuItem.Name = "addNewBookToolStripMenuItem";
-            this.addNewBookToolStripMenuItem.Size = new System.Drawing.Size(227, 38);
+            this.addNewBookToolStripMenuItem.Size = new System.Drawing.Size(209, 38);
             this.addNewBookToolStripMenuItem.Text = "Add New Book";
             this.addNewBookToolStripMenuItem.Click += new System.EventHandler(this.addNewBookToolStripMenuItem_Click);
             // 
@@ -87,7 +85,7 @@ namespace LibraryManagement.Forms
             this.viewBooksToolStripMenuItem.Image = global::LibraryManagement.Properties.Resources.book;
             this.viewBooksToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.viewBooksToolStripMenuItem.Name = "viewBooksToolStripMenuItem";
-            this.viewBooksToolStripMenuItem.Size = new System.Drawing.Size(227, 38);
+            this.viewBooksToolStripMenuItem.Size = new System.Drawing.Size(209, 38);
             this.viewBooksToolStripMenuItem.Text = "View Books";
             this.viewBooksToolStripMenuItem.Click += new System.EventHandler(this.viewBooksToolStripMenuItem_Click);
             // 
@@ -97,7 +95,7 @@ namespace LibraryManagement.Forms
             this.issueBookToolStripMenuItem.Image = global::LibraryManagement.Properties.Resources.books1;
             this.issueBookToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.issueBookToolStripMenuItem.Name = "issueBookToolStripMenuItem";
-            this.issueBookToolStripMenuItem.Size = new System.Drawing.Size(227, 38);
+            this.issueBookToolStripMenuItem.Size = new System.Drawing.Size(209, 38);
             this.issueBookToolStripMenuItem.Text = "Issue Book";
             // 
             // returnBookToolStripMenuItem
@@ -106,17 +104,8 @@ namespace LibraryManagement.Forms
             this.returnBookToolStripMenuItem.Image = global::LibraryManagement.Properties.Resources.books_for_study;
             this.returnBookToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.returnBookToolStripMenuItem.Name = "returnBookToolStripMenuItem";
-            this.returnBookToolStripMenuItem.Size = new System.Drawing.Size(227, 38);
+            this.returnBookToolStripMenuItem.Size = new System.Drawing.Size(209, 38);
             this.returnBookToolStripMenuItem.Text = "Return Book";
-            // 
-            // completeDetailsToolStripMenuItem
-            // 
-            this.completeDetailsToolStripMenuItem.BackColor = System.Drawing.Color.Gold;
-            this.completeDetailsToolStripMenuItem.Image = global::LibraryManagement.Properties.Resources.flat_lay;
-            this.completeDetailsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.completeDetailsToolStripMenuItem.Name = "completeDetailsToolStripMenuItem";
-            this.completeDetailsToolStripMenuItem.Size = new System.Drawing.Size(227, 38);
-            this.completeDetailsToolStripMenuItem.Text = "Complete Details";
             // 
             // addNewStudentToolStripMenuItem
             // 
@@ -178,7 +167,6 @@ namespace LibraryManagement.Forms
         private System.Windows.Forms.ToolStripMenuItem viewStudentInformationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem issueBookToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem returnBookToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem completeDetailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem studentsInformationToolStripMenuItem;
     }
 }
