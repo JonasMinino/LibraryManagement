@@ -1,4 +1,5 @@
-﻿using LibraryManagement.Models;
+﻿using LibraryManagement.Forms;
+using LibraryManagement.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace LibraryManagement.Helper
 {
@@ -195,20 +197,42 @@ namespace LibraryManagement.Helper
             using (con = new SqlConnection(conString))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT Title, Author, Publisher, Year FROM Books", con);
-                SqlDataReader rdr = cmd.ExecuteReader();
-                if (rdr.HasRows)
+                SqlCommand cmd = new SqlCommand("SELECT Title, Author, Publisher, Year, ISBN FROM Books", con);
+                using (SqlDataReader rdr = cmd.ExecuteReader())
                 {
-                    while (rdr.Read())
+                    if (rdr.HasRows)
                     {
-                        list.Add(rdr["Title"].ToString());
-                        list.Add(rdr["Author"].ToString());
-                        list.Add(rdr["Publisher"].ToString());
-                        list.Add(rdr["Year"].ToString());
+                        while (rdr.Read())
+                        {
+                            list.Add(rdr["Title"].ToString());
+                            list.Add(rdr["Author"].ToString());
+                            list.Add(rdr["Publisher"].ToString());
+                            list.Add(rdr["Year"].ToString());
+                            list.Add(rdr["ISBN"].ToString());
+                        }
                     }
                 }
             }
             return list;
+        }
+        /// <summary>
+        /// Finds rows based on a string and updates the Data Grid View. 
+        /// </summary>
+        /// <param name="item"></param>
+        /// <param name="dgv"></param>
+        public static void SearchRecords(string search, DataGridView dgv)
+        {
+            using(con=new SqlConnection(conString))
+            {
+                con.Open();                
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Books WHERE Title LIKE @search or Author LIKE @search or Publisher LIKE @search or  Year LIKE @search or ISBN LIKE @search", con);
+                cmd.Parameters.AddWithValue("search", string.Format("%{0}%", search));
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dgv.DataSource = dt;                
+            }
+
         }
     }
 }

@@ -29,7 +29,6 @@ namespace LibraryManagement.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.dgvViewBooks = new System.Windows.Forms.DataGridView();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -39,25 +38,11 @@ namespace LibraryManagement.Forms
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.libaryDBDataSet = new LibraryManagement.LibaryDBDataSet();
-            this.booksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.booksTableAdapter = new LibraryManagement.LibaryDBDataSetTableAdapters.BooksTableAdapter();
-            this.libaryDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.booksBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.libaryDBDataSet1 = new LibraryManagement.LibaryDBDataSet1();
-            this.booksBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.booksTableAdapter1 = new LibraryManagement.LibaryDBDataSet1TableAdapters.BooksTableAdapter();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvViewBooks)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.libaryDBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.libaryDBDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.libaryDBDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,6 +53,7 @@ namespace LibraryManagement.Forms
             this.dgvViewBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvViewBooks.Location = new System.Drawing.Point(191, 67);
             this.dgvViewBooks.Name = "dgvViewBooks";
+            this.dgvViewBooks.ReadOnly = true;
             this.dgvViewBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvViewBooks.Size = new System.Drawing.Size(542, 272);
             this.dgvViewBooks.TabIndex = 0;
@@ -168,54 +154,6 @@ namespace LibraryManagement.Forms
             this.label2.TabIndex = 0;
             this.label2.Text = "Current Books";
             // 
-            // libaryDBDataSet
-            // 
-            this.libaryDBDataSet.DataSetName = "LibaryDBDataSet";
-            this.libaryDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // booksBindingSource
-            // 
-            this.booksBindingSource.DataMember = "Books";
-            this.booksBindingSource.DataSource = this.libaryDBDataSet;
-            // 
-            // booksTableAdapter
-            // 
-            this.booksTableAdapter.ClearBeforeFill = true;
-            // 
-            // libaryDBDataSetBindingSource
-            // 
-            this.libaryDBDataSetBindingSource.DataSource = this.libaryDBDataSet;
-            this.libaryDBDataSetBindingSource.Position = 0;
-            // 
-            // booksBindingSource1
-            // 
-            this.booksBindingSource1.DataMember = "Books";
-            this.booksBindingSource1.DataSource = this.libaryDBDataSetBindingSource;
-            // 
-            // libaryDBDataSet1
-            // 
-            this.libaryDBDataSet1.DataSetName = "LibaryDBDataSet1";
-            this.libaryDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // booksBindingSource2
-            // 
-            this.booksBindingSource2.DataMember = "Books";
-            this.booksBindingSource2.DataSource = this.libaryDBDataSet1;
-            // 
-            // booksTableAdapter1
-            // 
-            this.booksTableAdapter1.ClearBeforeFill = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::LibraryManagement.Properties.Resources.bookstack;
-            this.pictureBox1.Location = new System.Drawing.Point(2, 67);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(189, 333);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -228,7 +166,17 @@ namespace LibraryManagement.Forms
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::LibraryManagement.Properties.Resources.bookstack;
+            this.pictureBox1.Location = new System.Drawing.Point(2, 67);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(189, 333);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
             // ViewBooks
             // 
@@ -249,12 +197,6 @@ namespace LibraryManagement.Forms
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.libaryDBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.libaryDBDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.libaryDBDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -269,14 +211,6 @@ namespace LibraryManagement.Forms
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private LibaryDBDataSet libaryDBDataSet;
-        private System.Windows.Forms.BindingSource booksBindingSource;
-        private LibaryDBDataSetTableAdapters.BooksTableAdapter booksTableAdapter;
-        private System.Windows.Forms.BindingSource libaryDBDataSetBindingSource;
-        private System.Windows.Forms.BindingSource booksBindingSource1;
-        private LibaryDBDataSet1 libaryDBDataSet1;
-        private System.Windows.Forms.BindingSource booksBindingSource2;
-        private LibaryDBDataSet1TableAdapters.BooksTableAdapter booksTableAdapter1;
         public System.Windows.Forms.DataGridView dgvViewBooks;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnSearch;

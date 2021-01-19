@@ -1,4 +1,5 @@
 ﻿using LibraryManagement.Helper;
+using LibraryManagement.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -87,7 +88,7 @@ namespace LibraryManagement.Forms
             this.Close();
         }
         /// <summary>
-        /// Refreshes the data grid view if there is no text in the search textbox. 
+        /// Makes all data grid view rows visible if there is no text in the search textbox. 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -95,5 +96,16 @@ namespace LibraryManagement.Forms
         {
             if (txtSearch.Text == "") BookHelper.CurrentBooksData(dgvViewBooks);
         }
+        /// <summary>
+        /// Searches the books table to the term in the books table.
+        /// Displays the records with the term. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            BookHelper.SearchRecords(txtSearch.Text, dgvViewBooks);
+        }
+
     }
 }
