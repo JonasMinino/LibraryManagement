@@ -29,7 +29,7 @@ namespace LibraryManagement.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvViewBooks = new System.Windows.Forms.DataGridView();
+            this.dgvStudents = new System.Windows.Forms.DataGridView();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -40,23 +40,23 @@ namespace LibraryManagement.Forms
             this.btnSearch = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvViewBooks)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvViewBooks
+            // dgvStudents
             // 
-            this.dgvViewBooks.AllowUserToAddRows = false;
-            this.dgvViewBooks.AllowUserToDeleteRows = false;
-            this.dgvViewBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvViewBooks.Location = new System.Drawing.Point(191, 67);
-            this.dgvViewBooks.Name = "dgvViewBooks";
-            this.dgvViewBooks.ReadOnly = true;
-            this.dgvViewBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvViewBooks.Size = new System.Drawing.Size(542, 217);
-            this.dgvViewBooks.TabIndex = 7;
+            this.dgvStudents.AllowUserToAddRows = false;
+            this.dgvStudents.AllowUserToDeleteRows = false;
+            this.dgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStudents.Location = new System.Drawing.Point(191, 67);
+            this.dgvStudents.Name = "dgvStudents";
+            this.dgvStudents.ReadOnly = true;
+            this.dgvStudents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvStudents.Size = new System.Drawing.Size(542, 217);
+            this.dgvStudents.TabIndex = 7;
             // 
             // btnDelete
             // 
@@ -94,6 +94,7 @@ namespace LibraryManagement.Forms
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnUpdate
             // 
@@ -178,13 +179,13 @@ namespace LibraryManagement.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gold;
             this.ClientSize = new System.Drawing.Size(732, 345);
-            this.Controls.Add(this.dgvViewBooks);
+            this.Controls.Add(this.dgvStudents);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "StudentInformation";
             this.Text = "StudentInformation";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvViewBooks)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -195,7 +196,7 @@ namespace LibraryManagement.Forms
 
         #endregion
 
-        public System.Windows.Forms.DataGridView dgvViewBooks;
+        public System.Windows.Forms.DataGridView dgvStudents;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnCancel;
