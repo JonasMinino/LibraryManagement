@@ -32,5 +32,14 @@ namespace LibraryManagement.Forms
                 dtpDOB.Value = DateTime.Parse(row["DateofBirth"].ToString());
             }
         }
+        /// <summary>
+        /// Closes the Update Student Form//
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
