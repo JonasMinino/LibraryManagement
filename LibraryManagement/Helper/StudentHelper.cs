@@ -103,5 +103,21 @@ namespace LibraryManagement.Helper
                 return cmd.ExecuteNonQuery();
             }
         }
+        /// <summary>
+        /// Loads students from the Student table into a data grid view. 
+        /// </summary>
+        /// <param name="dgv"></param>
+        public static void LoadStudents(DataGridView dgv)
+        {
+            using(con = new SqlConnection(conString))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Student", con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dgv.DataSource = dt;
+            }
+        }
     }
 }

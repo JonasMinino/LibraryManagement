@@ -51,11 +51,11 @@ namespace LibraryManagement.Forms
             this.dgvStudents.AllowUserToAddRows = false;
             this.dgvStudents.AllowUserToDeleteRows = false;
             this.dgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStudents.Location = new System.Drawing.Point(191, 67);
+            this.dgvStudents.Location = new System.Drawing.Point(232, 73);
             this.dgvStudents.Name = "dgvStudents";
             this.dgvStudents.ReadOnly = true;
             this.dgvStudents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStudents.Size = new System.Drawing.Size(542, 217);
+            this.dgvStudents.Size = new System.Drawing.Size(454, 217);
             this.dgvStudents.TabIndex = 7;
             // 
             // btnDelete
@@ -166,9 +166,9 @@ namespace LibraryManagement.Forms
             // pictureBox1
             // 
             this.pictureBox1.Image = global::LibraryManagement.Properties.Resources.student;
-            this.pictureBox1.Location = new System.Drawing.Point(2, 67);
+            this.pictureBox1.Location = new System.Drawing.Point(-1, 67);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(189, 279);
+            this.pictureBox1.Size = new System.Drawing.Size(194, 279);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
@@ -183,8 +183,11 @@ namespace LibraryManagement.Forms
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "StudentInformation";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StudentInformation";
+            this.Load += new System.EventHandler(this.StudentInformation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

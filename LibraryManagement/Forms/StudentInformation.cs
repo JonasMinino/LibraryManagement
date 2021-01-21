@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryManagement.Helper;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,6 +25,15 @@ namespace LibraryManagement.Forms
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        /// <summary>
+        /// Loads the current students from the Student table.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void StudentInformation_Load(object sender, EventArgs e)
+        {
+            StudentHelper.LoadStudents(dgvStudents);
         }
     }
 }
