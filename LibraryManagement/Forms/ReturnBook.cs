@@ -26,5 +26,14 @@ namespace LibraryManagement.Forms
         {
             BookHelper.LoadIssuedBooks(dgvViewIssuedBooks);
         }
+        /// <summary>
+        /// Closes the return book form//
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
