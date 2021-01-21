@@ -343,7 +343,12 @@ namespace LibraryManagement.Helper
                 cmd.Parameters.AddWithValue("current", CurrentId);
                 using(SqlDataReader rdr = cmd.ExecuteReader())
                 {
-                    if(rdr.HasRows) while (rdr.Read()) { ava = copies - int.Parse(rdr["Available"].ToString()); }
+                    if(rdr.HasRows) while (rdr.Read()) 
+                        { 
+                            ava = int.Parse(rdr["Available"].ToString());
+                            if (ava > copies) ava = copies;
+                            else ava = ava + (copies - ava);
+                        }
                 }
             }
             return ava;
@@ -437,16 +442,16 @@ namespace LibraryManagement.Helper
             {
                 //Sets the returned value to 1//
                 con.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE IssuedBooks SET Returned=@ret", con);
+                SqlCommand cmd = new SqlCommand("UPDATE IssuedBooks SET Returned=@ret WHERE BookId=@id", con);
                 cmd.Parameters.AddWithValue("ret", 1);
+                cmd.Parameters.AddWithValue("id", bookId);
                 cmd.ExecuteNonQuery();
 
                 //Gets the available value from the Books table//
                 cmd.CommandText = "Select * FROM Books WHERE BookId=@id";
-                cmd.Parameters.AddWithValue("id", bookId);
                 using (SqlDataReader rdr = cmd.ExecuteReader())
                 {
-                    if(rdr.HasRows) while (rdr.Read()) { available = int.Parse(rdr["Avaialable"].ToString()); }
+                    if(rdr.HasRows) while (rdr.Read()) { available = int.Parse(rdr["Available"].ToString()); }
                 }
 
                 //Adds 1 to avaiable and updates the Books table.//
@@ -458,6 +463,7 @@ namespace LibraryManagement.Helper
                 //Reload the Return Book data grid view.//
                 ReturnBook rb = new ReturnBook();
                 LoadIssuedBooks(rb.dgvViewIssuedBooks);
+                rb.dgvViewIssuedBooks.Refresh();
             }
 
         }
