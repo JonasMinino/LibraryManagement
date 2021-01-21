@@ -64,19 +64,20 @@ namespace LibraryManagement.Forms
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnCancel.Location = new System.Drawing.Point(191, 108);
+            this.btnCancel.Location = new System.Drawing.Point(199, 104);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(86, 32);
             this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.Color.Gold;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(89, 108);
+            this.btnAdd.Location = new System.Drawing.Point(89, 104);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(86, 32);
             this.btnAdd.TabIndex = 6;
@@ -85,7 +86,7 @@ namespace LibraryManagement.Forms
             // 
             // txtAuthor
             // 
-            this.txtAuthor.Location = new System.Drawing.Point(123, 57);
+            this.txtAuthor.Location = new System.Drawing.Point(131, 57);
             this.txtAuthor.Name = "txtAuthor";
             this.txtAuthor.Size = new System.Drawing.Size(200, 20);
             this.txtAuthor.TabIndex = 1;
@@ -102,7 +103,7 @@ namespace LibraryManagement.Forms
             // 
             // txtTitle
             // 
-            this.txtTitle.Location = new System.Drawing.Point(123, 15);
+            this.txtTitle.Location = new System.Drawing.Point(131, 15);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(200, 20);
             this.txtTitle.TabIndex = 0;

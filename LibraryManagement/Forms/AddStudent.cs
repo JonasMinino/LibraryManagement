@@ -16,6 +16,14 @@ namespace LibraryManagement.Forms
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Closes the Add Student form. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
