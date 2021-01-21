@@ -35,5 +35,14 @@ namespace LibraryManagement.Forms
         {
             this.Close();
         }
+        /// <summary>
+        /// Updates the Books and Issued books table
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

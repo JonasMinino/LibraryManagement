@@ -130,6 +130,7 @@ namespace LibraryManagement.Forms
             this.btnReturn.TabIndex = 2;
             this.btnReturn.Text = "Return";
             this.btnReturn.UseVisualStyleBackColor = false;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // btnCancel
             // 

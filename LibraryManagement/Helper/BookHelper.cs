@@ -308,7 +308,7 @@ namespace LibraryManagement.Helper
             {
                 //Adds a book to the issued books table//
                 con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO IssuedBooks (StudentId, StudentName, title, Author, DateIssued, DueDate, Overdue) VALUES(@sId, @sName, @title, @author, @date, @due, @over)", con);
+                SqlCommand cmd = new SqlCommand("INSERT INTO IssuedBooks (StudentId, StudentName, title, Author, DateIssued, DueDate, Overdue, Returned) VALUES(@sId, @sName, @title, @author, @date, @due, @over, @return)", con);
                 cmd.Parameters.AddWithValue("@sid", book.StudentId);
                 cmd.Parameters.AddWithValue("@sName", book.StudentName);
                 cmd.Parameters.AddWithValue("@title", book.Title);
@@ -316,6 +316,7 @@ namespace LibraryManagement.Helper
                 cmd.Parameters.AddWithValue("@date", book.DateIssued);
                 cmd.Parameters.AddWithValue("@due", book.DueDate);
                 cmd.Parameters.AddWithValue("@over", book.Overdue);
+                cmd.Parameters.AddWithValue("@return", book.Returned);
                 cmd.ExecuteNonQuery();
 
                 //Updates the available value in the books table//
@@ -395,7 +396,8 @@ namespace LibraryManagement.Helper
             using(con = new SqlConnection(conString))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM IssuedBooks", con);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM IssuedBooks WHERE Returned=@return", con);
+                cmd.Parameters.AddWithValue("return", 0);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -421,6 +423,44 @@ namespace LibraryManagement.Helper
             }
 
         }
-      
+        /// <summary>
+        /// Updates the return value of Issued Books table.
+        /// Reloads the issued books table.
+        /// Updates the available value in the Books table. 
+        /// </summary>
+        /// <param name="bookId"></param>
+        public static void ReturnBook(int bookId)
+        {
+            int available = 0;
+            using(con= new SqlConnection(conString))
+            {
+                //Sets the returned value to 1//
+                con.Open();
+                SqlCommand cmd = new SqlCommand("UPDATE IssuedBooks SET Returned=@ret", con);
+                cmd.Parameters.AddWithValue("ret", 1);
+                cmd.ExecuteNonQuery();
+
+                //Gets the available value from the Books table//
+                cmd.CommandText = "Select * FROM Books WHERE BookId=@id";
+                cmd.Parameters.AddWithValue("id", bookId);
+                using (SqlDataReader rdr = cmd.ExecuteReader())
+                {
+                    if(rdr.HasRows) while (rdr.Read()) { available = int.Parse(rdr["Avaialable"].ToString()); }
+                }
+
+                //Adds 1 to avaiable and updates the Books table.//
+                available++;
+                cmd.CommandText = "UPDATE Books SET Available=@ava WHERE BookId=@id";
+                cmd.Parameters.AddWithValue("ava", available);
+                cmd.ExecuteNonQuery();
+
+                //Reload the Return Book data grid view.//
+                ReturnBook rb = new ReturnBook();
+                LoadIssuedBooks(rb.dgvViewIssuedBooks);
+            }
+
+        }
+
+
     }
 }
