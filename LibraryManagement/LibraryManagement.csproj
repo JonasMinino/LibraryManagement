@@ -113,6 +113,12 @@
     <Compile Include="Forms\SignUp.Designer.cs">
       <DependentUpon>SignUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\StudentInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StudentInformation.Designer.cs">
+      <DependentUpon>StudentInformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\UpdateBook.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SignUp.resx">
       <DependentUpon>SignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StudentInformation.resx">
+      <DependentUpon>StudentInformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UpdateBook.resx">
       <DependentUpon>UpdateBook.cs</DependentUpon>
@@ -242,6 +251,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>LibaryDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\student.png" />
+    <None Include="Resources\students.jpg" />
     <None Include="Resources\AnimatedStudent.gif" />
     <None Include="Resources\BookDream.jpg" />
     <None Include="Resources\OpenBook.png" />

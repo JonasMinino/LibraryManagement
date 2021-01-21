@@ -36,11 +36,16 @@ namespace LibraryManagement.Forms
         /// <param name="e"></param>
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Student student = new Student(null, txtFirstName.Text, txtLastName.Text, dtpDOB.Value.ToString());
-            if (StudentHelper.ValidateStudent(student)) MessageBox.Show("There's anothe student with duplicate information.", "Duplicate Record", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            else             
-                if (StudentHelper.AddStudent(student) > 0) MessageBox.Show("The student: " + student.FirstName + " , " + student.LastName + " has been added.", "Student Added", MessageBoxButtons.OK, MessageBoxIcon.Information); 
-            
+            Student student = new Student(null, txtFirstName.Text, txtLastName.Text, dtpDOB.Value.Date.ToString("MM/dd/yyyy"));
+            if (StudentHelper.ValidateStudent(student)) MessageBox.Show("There's another student with duplicate information.", "Duplicate Record", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
+            {
+                if (StudentHelper.AddStudent(student) > 0) MessageBox.Show("The student: " + student.FirstName + " , " + student.LastName + " has been added.", "Student Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                txtFirstName.Clear();
+                txtLastName.Clear();
+                dtpDOB.Value = DateTime.Today;
+            }
         }
     }
 }

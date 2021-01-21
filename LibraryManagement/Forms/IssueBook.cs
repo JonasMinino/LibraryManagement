@@ -79,7 +79,7 @@ namespace LibraryManagement.Forms
             {
                 available--;
 
-                IssuedBook book = new IssuedBook(null, int.Parse(cmbId.SelectedItem.ToString()), int.Parse(dgvIssueBook.CurrentRow.Cells["BookId"].Value.ToString()), student , title , dgvIssueBook.CurrentRow.Cells["Author"].Value.ToString(), DateTime.Today, dtpDueDate.Value, int.Parse(dgvIssueBook.CurrentRow.Cells["Copies"].Value.ToString()), available, "NO", 0);
+                IssuedBook book = new IssuedBook(null, int.Parse(cmbId.SelectedItem.ToString()), int.Parse(dgvIssueBook.CurrentRow.Cells["BookId"].Value.ToString()), student , title , dgvIssueBook.CurrentRow.Cells["Author"].Value.ToString(), DateTime.Today.ToString("MM/dd/yyyy"), dtpDueDate.Value.ToString("MM/dd/yyyy"), int.Parse(dgvIssueBook.CurrentRow.Cells["Copies"].Value.ToString()), available, "NO", 0);
 
                 if (BookHelper.IssueBook(book) > 0)
                 {

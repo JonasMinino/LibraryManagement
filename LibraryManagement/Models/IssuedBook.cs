@@ -14,14 +14,14 @@ namespace LibraryManagement.Models
         public string StudentName { get; set; }
         public string Title { get; set; }
         public string Author { get; set; }
-        public DateTime DateIssued { get; set; }
-        public DateTime DueDate { get; set; }
+        public string DateIssued { get; set; }
+        public string DueDate { get; set; }
         public int Copies { get; set; }
         public int Available { get; set; }
         public string Overdue { get; set; }
         public int Returned { get; set; }
 
-        public IssuedBook (int? issueId, int studentId, int bookId, string name, string title, string author, DateTime issuedDate, DateTime dueDate, int copies, int available, string overdue, int returned)
+        public IssuedBook (int? issueId, int studentId, int bookId, string name, string title, string author, string issuedDate, string dueDate, int copies, int available, string overdue, int returned)
         {
             IssueId = issueId;
             StudentId = studentId;
