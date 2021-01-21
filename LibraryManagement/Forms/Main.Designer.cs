@@ -129,6 +129,7 @@ namespace LibraryManagement.Forms
             this.viewStudentInformationToolStripMenuItem.Name = "viewStudentInformationToolStripMenuItem";
             this.viewStudentInformationToolStripMenuItem.Size = new System.Drawing.Size(259, 38);
             this.viewStudentInformationToolStripMenuItem.Text = "Add New Student";
+            this.viewStudentInformationToolStripMenuItem.Click += new System.EventHandler(this.viewStudentInformationToolStripMenuItem_Click);
             // 
             // studentsInformationToolStripMenuItem
             // 

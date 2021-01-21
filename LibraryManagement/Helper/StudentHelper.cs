@@ -64,6 +64,44 @@ namespace LibraryManagement.Helper
                 combo.DataSource = ids.ToArray();
             }
         }
-        
+        /// <summary>
+        /// Checks if a student is a duplicate in the Student table. 
+        /// </summary>
+        /// <param name="student"></param>
+        /// <returns></returns>
+        public static bool ValidateStudent(Student student)
+        {
+            using(con = new SqlConnection(conString))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Student WHERE FirstName=@fName AND LastName=@lName AND DateofBirth=@dob", con);
+                cmd.Parameters.AddWithValue("fName", student.FirstName);
+                cmd.Parameters.AddWithValue("lName", student.LastName);
+                cmd.Parameters.AddWithValue("dob", student.DateofBirth);
+                using(SqlDataReader rdr = cmd.ExecuteReader())
+                {
+                    if (rdr.HasRows) return true;
+                }              
+            }
+            return false;
+        }
+        /// <summary>
+        /// Adds a new student to the Student table. 
+        /// </summary>
+        /// <param name="student"></param>
+        /// <returns></returns>
+        public static int AddStudent(Student student)
+        {
+            using(con = new SqlConnection(conString))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("INSERT INTO Student (FirstName, LastName, DateofBirth) VALUES(@first, @last, @dob)", con);
+                cmd.Parameters.AddWithValue("first", student.FirstName);
+                cmd.Parameters.AddWithValue("last", student.LastName);
+                cmd.Parameters.AddWithValue("dob", student.DateofBirth);
+
+                return cmd.ExecuteNonQuery();
+            }
+        }
     }
 }

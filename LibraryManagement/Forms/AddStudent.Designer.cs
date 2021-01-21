@@ -32,15 +32,15 @@ namespace LibraryManagement.Forms
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.txtAuthor = new System.Windows.Forms.TextBox();
+            this.txtLastName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtTitle = new System.Windows.Forms.TextBox();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -49,13 +49,13 @@ namespace LibraryManagement.Forms
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(248)))), ((int)(((byte)(93)))));
-            this.panel2.Controls.Add(this.dateTimePicker1);
+            this.panel2.Controls.Add(this.dtpDOB);
             this.panel2.Controls.Add(this.btnCancel);
             this.panel2.Controls.Add(this.btnAdd);
-            this.panel2.Controls.Add(this.txtAuthor);
+            this.panel2.Controls.Add(this.txtLastName);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.txtTitle);
+            this.panel2.Controls.Add(this.txtFirstName);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(145, 65);
             this.panel2.Name = "panel2";
@@ -89,12 +89,12 @@ namespace LibraryManagement.Forms
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // txtAuthor
+            // txtLastName
             // 
-            this.txtAuthor.Location = new System.Drawing.Point(164, 57);
-            this.txtAuthor.Name = "txtAuthor";
-            this.txtAuthor.Size = new System.Drawing.Size(200, 20);
-            this.txtAuthor.TabIndex = 1;
+            this.txtLastName.Location = new System.Drawing.Point(164, 57);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(200, 20);
+            this.txtLastName.TabIndex = 1;
             // 
             // label3
             // 
@@ -106,12 +106,12 @@ namespace LibraryManagement.Forms
             this.label3.TabIndex = 0;
             this.label3.Text = "Last Name";
             // 
-            // txtTitle
+            // txtFirstName
             // 
-            this.txtTitle.Location = new System.Drawing.Point(164, 15);
-            this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(200, 20);
-            this.txtTitle.TabIndex = 0;
+            this.txtFirstName.Location = new System.Drawing.Point(164, 15);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(200, 20);
+            this.txtFirstName.TabIndex = 0;
             // 
             // label2
             // 
@@ -162,13 +162,13 @@ namespace LibraryManagement.Forms
             this.label4.TabIndex = 0;
             this.label4.Text = "Date of Birth";
             // 
-            // dateTimePicker1
+            // dtpDOB
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(164, 95);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(121, 20);
-            this.dateTimePicker1.TabIndex = 2;
+            this.dtpDOB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDOB.Location = new System.Drawing.Point(164, 95);
+            this.dtpDOB.Name = "dtpDOB";
+            this.dtpDOB.Size = new System.Drawing.Size(121, 20);
+            this.dtpDOB.TabIndex = 2;
             // 
             // AddStudent
             // 
@@ -196,14 +196,14 @@ namespace LibraryManagement.Forms
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.TextBox txtAuthor;
+        private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtTitle;
+        private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpDOB;
         private System.Windows.Forms.Label label4;
     }
 }
