@@ -61,5 +61,14 @@ namespace LibraryManagement.Forms
         {
             (new AddStudent()).ShowDialog();
         }
+        /// <summary>
+        /// Opens the Student Information form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void studentsInformationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            (new StudentInformation()).ShowDialog();
+        }
     }
 }

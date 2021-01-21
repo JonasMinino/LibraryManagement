@@ -139,6 +139,7 @@ namespace LibraryManagement.Forms
             this.studentsInformationToolStripMenuItem.Name = "studentsInformationToolStripMenuItem";
             this.studentsInformationToolStripMenuItem.Size = new System.Drawing.Size(259, 38);
             this.studentsInformationToolStripMenuItem.Text = "Students Information";
+            this.studentsInformationToolStripMenuItem.Click += new System.EventHandler(this.studentsInformationToolStripMenuItem_Click);
             // 
             // Main
             // 
