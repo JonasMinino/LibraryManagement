@@ -43,5 +43,14 @@ namespace LibraryManagement.Forms
         {
             (new IssueBook()).ShowDialog();
         }
+        /// <summary>
+        /// Opens the Return Book form. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void returnBookToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            (new ReturnBook()).ShowDialog();
+        }
     }
 }
