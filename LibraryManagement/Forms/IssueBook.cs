@@ -1,4 +1,5 @@
 ﻿using LibraryManagement.Helper;
+using LibraryManagement.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -68,7 +69,29 @@ namespace LibraryManagement.Forms
         /// <param name="e"></param>
         private void btnIssue_Click(object sender, EventArgs e)
         {
+            int available = int.Parse(dgvIssueBook.CurrentRow.Cells["Available"].Value.ToString());
+            string title = dgvIssueBook.CurrentRow.Cells["Title"].Value.ToString();
+            string student = cmbStudentName.SelectedItem.ToString();
+            BookHelper.CurrentId = int.Parse(dgvIssueBook.CurrentRow.Cells["BookId"].Value.ToString());
 
+
+            if ( available > 0)
+            {
+                available--;
+
+                IssuedBook book = new IssuedBook(null, int.Parse(cmbId.SelectedItem.ToString()), student , title , dgvIssueBook.CurrentRow.Cells["Author"].Value.ToString(), DateTime.Today, dtpDueDate.Value, int.Parse(dgvIssueBook.CurrentRow.Cells["Copies"].Value.ToString()), available, "NO");
+
+                if (BookHelper.IssueBook(book) > 0)
+                {
+                    DialogResult result = MessageBox.Show("A copy of " + title + " was issued to student: " + student, "Book Issued", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (result == DialogResult.OK)
+                    {
+                        BookHelper.LoadActive(dgvIssueBook);
+                        cmbId.SelectedIndex = -1;
+                        cmbStudentName.SelectedIndex = -1;
+                    }
+                }
+            }
         }
         /// <summary>
         /// Populates the id combo box based on the name picked from the student name combo box. 

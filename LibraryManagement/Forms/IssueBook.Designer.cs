@@ -107,8 +107,10 @@ namespace LibraryManagement.Forms
             this.dgvIssueBook.AllowUserToDeleteRows = false;
             this.dgvIssueBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvIssueBook.Location = new System.Drawing.Point(0, 2);
+            this.dgvIssueBook.MultiSelect = false;
             this.dgvIssueBook.Name = "dgvIssueBook";
             this.dgvIssueBook.ReadOnly = true;
+            this.dgvIssueBook.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvIssueBook.Size = new System.Drawing.Size(506, 150);
             this.dgvIssueBook.TabIndex = 8;
             // 

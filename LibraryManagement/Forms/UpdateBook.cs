@@ -34,7 +34,6 @@ namespace LibraryManagement.Forms
                 txtYear.Text = row["Year"].ToString();
                 txtISBN.Text = row["ISBN"].ToString();
                 txtCopies.Text = row["Copies"].ToString();
-                cmbCheckedOut.SelectedIndex = cmbCheckedOut.FindStringExact(row["Checkedout"].ToString());
                 cmbType.SelectedIndex = cmbType.FindStringExact(row["Type"].ToString());
             }
         }
@@ -57,7 +56,7 @@ namespace LibraryManagement.Forms
         /// <param name="e"></param>
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            Book book = new Book(BookHelper.CurrentId, txtTitle.Text, txtAuthor.Text, txtPublisher.Text, txtYear.Text, txtISBN.Text, cmbType.SelectedItem.ToString(), int.Parse(txtCopies.Text) , cmbCheckedOut.SelectedItem.ToString());
+            Book book = new Book(BookHelper.CurrentId, txtTitle.Text, txtAuthor.Text, txtPublisher.Text, txtYear.Text, txtISBN.Text, cmbType.SelectedItem.ToString(), int.Parse(txtCopies.Text), BookHelper.GetAvailable(int.Parse(txtCopies.Text)), BookHelper.GetDueDate() ,BookHelper.GetOverdue());
 
             if (BookHelper.UpdateRecord(book) > 0)
             {

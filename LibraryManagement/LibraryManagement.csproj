@@ -117,6 +117,7 @@
     <Compile Include="Helper\LoginHelper.cs" />
     <Compile Include="Helper\StudentHelper.cs" />
     <Compile Include="Models\Book.cs" />
+    <Compile Include="Models\IssuedBook.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
@@ -217,12 +218,13 @@
   <ItemGroup>
     <Content Include="Books.Table.sql" />
     <Content Include="LibaryDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="LibaryDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>LibaryDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\OpenBook.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

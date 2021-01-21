@@ -35,8 +35,6 @@ namespace LibraryManagement.Forms
             this.cmbType = new System.Windows.Forms.ComboBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.cmbCheckedOut = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -81,8 +79,6 @@ namespace LibraryManagement.Forms
             this.panel2.Controls.Add(this.cmbType);
             this.panel2.Controls.Add(this.btnCancel);
             this.panel2.Controls.Add(this.btnUpdate);
-            this.panel2.Controls.Add(this.cmbCheckedOut);
-            this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label6);
@@ -98,7 +94,7 @@ namespace LibraryManagement.Forms
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(270, 68);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(363, 396);
+            this.panel2.Size = new System.Drawing.Size(363, 352);
             this.panel2.TabIndex = 3;
             // 
             // cmbType
@@ -122,7 +118,7 @@ namespace LibraryManagement.Forms
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnCancel.Location = new System.Drawing.Point(211, 341);
+            this.btnCancel.Location = new System.Drawing.Point(211, 300);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(86, 32);
             this.btnCancel.TabIndex = 7;
@@ -135,34 +131,13 @@ namespace LibraryManagement.Forms
             this.btnUpdate.BackColor = System.Drawing.Color.Gold;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(99, 341);
+            this.btnUpdate.Location = new System.Drawing.Point(99, 300);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(86, 32);
             this.btnUpdate.TabIndex = 6;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // cmbCheckedOut
-            // 
-            this.cmbCheckedOut.FormattingEnabled = true;
-            this.cmbCheckedOut.Items.AddRange(new object[] {
-            "NO",
-            "YES"});
-            this.cmbCheckedOut.Location = new System.Drawing.Point(149, 296);
-            this.cmbCheckedOut.Name = "cmbCheckedOut";
-            this.cmbCheckedOut.Size = new System.Drawing.Size(121, 21);
-            this.cmbCheckedOut.TabIndex = 5;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(20, 288);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(127, 26);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Checked Out ";
             // 
             // label7
             // 
@@ -281,7 +256,7 @@ namespace LibraryManagement.Forms
             this.pictureBox1.Image = global::LibraryManagement.Properties.Resources.Update;
             this.pictureBox1.Location = new System.Drawing.Point(2, 69);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(271, 395);
+            this.pictureBox1.Size = new System.Drawing.Size(271, 351);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -290,7 +265,7 @@ namespace LibraryManagement.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 464);
+            this.ClientSize = new System.Drawing.Size(632, 421);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -326,8 +301,6 @@ namespace LibraryManagement.Forms
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cmbCheckedOut;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox cmbType;
         private System.Windows.Forms.Label label9;

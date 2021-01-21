@@ -43,7 +43,7 @@ namespace LibraryManagement.Forms
             if (txtTitle.Text == "" || txtAuthor.Text == "") MessageBox.Show("Are you mising the Title, or Author?", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
-                Book book = new Book(null, txtTitle.Text, txtAuthor.Text, txtPublisher.Text, txtYear.Text.ToString(), txtISBN.Text, cbxType.Text, 1, "NO");
+                Book book = new Book(null, txtTitle.Text, txtAuthor.Text, txtPublisher.Text, txtYear.Text.ToString(), txtISBN.Text, cbxType.Text, int.Parse(txtCopies.Text),  int.Parse(txtCopies.Text), null, "NO");
 
                 //Checks if there is a record with the same Title, Author, and Publisher.//
                 if (BookHelper.ValidateBook(book))

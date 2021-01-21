@@ -16,9 +16,11 @@ namespace LibraryManagement.Models
         public string ISBN { get; set; }
         public string Type { get; set; }
         public int NumberOfCopies { get; set; }
-        public string CheckedOut { get; set; }
+        public int Available { get; set; }
+        public string DueDate { get; set; }
+        public string Overdue { get; set; }
 
-        public Book(Nullable<int> id, string title, string author, string publisher, string year, string isbn, string type, int copies, string checkout)
+        public Book(Nullable<int> id, string title, string author, string publisher, string year, string isbn, string type, int copies, int available, string due, string overdue)
         {
             BookId = id;
             Title = title;
@@ -28,7 +30,9 @@ namespace LibraryManagement.Models
             ISBN = isbn;
             Type = type;
             NumberOfCopies = copies;
-            CheckedOut = checkout;            
+            Available = available;
+            DueDate = due;
+            Overdue = overdue;            
         }
 
 

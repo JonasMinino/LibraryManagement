@@ -89,7 +89,7 @@ namespace LibraryManagement.Helper
             using (con = new SqlConnection(conString))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO Books (Title, Author, Publisher, Year, ISBN, Type, Copies, Checkedout) VALUES(@title, @author,@publisher, @year, @isbn, @type, @copies, @check)", con);
+                SqlCommand cmd = new SqlCommand("INSERT INTO Books (Title, Author, Publisher, Year, ISBN, Type, Copies, Checkedout) VALUES(@title, @author,@publisher, @year, @isbn, @type, @copies, @available, @over)", con);
                 cmd.Parameters.AddWithValue("@title", book.Title);
                 cmd.Parameters.AddWithValue("@author", book.Author);
                 cmd.Parameters.AddWithValue("@publisher", book.Publisher);
@@ -97,13 +97,14 @@ namespace LibraryManagement.Helper
                 cmd.Parameters.AddWithValue("@isbn", book.ISBN);
                 cmd.Parameters.AddWithValue("@type", book.Type);
                 cmd.Parameters.AddWithValue("@copies", book.NumberOfCopies);
-                cmd.Parameters.AddWithValue("@check", book.CheckedOut);
+                cmd.Parameters.AddWithValue("@available", book.Available);
+                cmd.Parameters.AddWithValue("@over", book.Overdue);
                 return cmd.ExecuteNonQuery();
             }
         }
         /// <summary>
         /// Retrieves the data from the books table and displays it in the data grid view.
-        /// Changes the background color of the checkedout cell if the book is checkedout or not. 
+        /// Changes the background color of the available and overdue cells  if they are 0 or overdue. 
         /// Bolds the text of the checkout cell. 
         /// </summary>
         /// <param name="dgv"></param>
@@ -111,7 +112,7 @@ namespace LibraryManagement.Helper
         {
             using(con = new SqlConnection(conString))
             {
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Books", con);
+                SqlCommand cmd = new SqlCommand("SELECT BookId,Title,Author,Publisher,Year,ISBN,Type,Copies,Available FROM Books", con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -131,6 +132,24 @@ namespace LibraryManagement.Helper
                 }
             }
         }
+        /// <summary>
+        /// Checks if the current date is higher than the due date. 
+        /// Changes the overdue value in the books table.
+        /// </summary>
+        private static void CheckDueDate()
+        {
+            
+            using (con = new SqlConnection(conString))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("UPDATE Books SET Overdue=@over WHERE DueDate < @today", con);
+                cmd.Parameters.AddWithValue("@over", "YES");
+                cmd.Parameters.AddWithValue("today", DateTime.Today);
+                cmd.ExecuteNonQuery();       
+            }
+                
+        }
+        
         /// <summary>
         /// Returns a single row of data based on a book id. 
         /// </summary>
@@ -158,7 +177,7 @@ namespace LibraryManagement.Helper
             using(con = new SqlConnection(conString))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE Books SET Title=@title, Author=@author, Publisher=@pub, Year=@year, ISBN=@isbn, Type=@type, Copies=@copies, Checkedout=@check WHERE BookId=@id", con);
+                SqlCommand cmd = new SqlCommand("UPDATE Books SET Title=@title, Author=@author, Publisher=@pub, Year=@year, ISBN=@isbn, Type=@type, Copies=@copies, Available=@available, Overdue=@overdue WHERE BookId=@id", con);
                 cmd.Parameters.AddWithValue("@id", book.BookId);
                 cmd.Parameters.AddWithValue("@title", book.Title);
                 cmd.Parameters.AddWithValue("@author", book.Author);
@@ -167,7 +186,8 @@ namespace LibraryManagement.Helper
                 cmd.Parameters.AddWithValue("@isbn", book.ISBN);
                 cmd.Parameters.AddWithValue("@type", book.Type);
                 cmd.Parameters.AddWithValue("@copies", book.NumberOfCopies);
-                cmd.Parameters.AddWithValue("@check", book.CheckedOut);
+                cmd.Parameters.AddWithValue("@available", book.Available);
+                cmd.Parameters.AddWithValue("@overdue", book.Overdue);
                 return cmd.ExecuteNonQuery();
             }
         }
@@ -261,7 +281,7 @@ namespace LibraryManagement.Helper
             using(con = new SqlConnection(conString))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Books WHERE Available>@value", con);
+                SqlCommand cmd = new SqlCommand("SELECT BookId,Title,Author,Publisher,Year,ISBN,Type,Copies,Available FROM Books WHERE Available>@value", con);
                 cmd.Parameters.AddWithValue("value", 0);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -273,14 +293,96 @@ namespace LibraryManagement.Helper
                     {
                         row.Cells["Available"].Style.BackColor = Color.FromArgb(184, 244, 191);
                         row.Cells["Available"].Style.Font = new Font(dgv.Font, FontStyle.Bold);
-                    }
-                    else
-                    {
-                        row.Cells["Available"].Style.BackColor = Color.Salmon;
-                        row.Cells["Available"].Style.Font = new Font(dgv.Font, FontStyle.Bold);
-                    }
+                    }                    
                 }
             }
+        }
+        /// <summary>
+        /// Adds a book into the issued book table
+        /// </summary>
+        /// <param name="book"></param>
+        /// <returns></returns>
+        public static int IssueBook(IssuedBook book)
+        {
+            using(con =new SqlConnection(conString))
+            {
+                //Adds a book to the issued books table//
+                con.Open();
+                SqlCommand cmd = new SqlCommand("INSERT INTO IssuedBooks (StudentId, StudentName, title, Author, DateIssued, DueDate, Overdue) VALUES(@sId, @sName, @title, @author, @date, @due, @over)", con);
+                cmd.Parameters.AddWithValue("@sid", book.StudentId);
+                cmd.Parameters.AddWithValue("@sName", book.StudentName);
+                cmd.Parameters.AddWithValue("@title", book.Title);
+                cmd.Parameters.AddWithValue("@author", book.Author);
+                cmd.Parameters.AddWithValue("@date", book.DateIssued);
+                cmd.Parameters.AddWithValue("@due", book.DueDate);
+                cmd.Parameters.AddWithValue("@over", book.Overdue);
+                cmd.ExecuteNonQuery();
+
+                //Updates the available value in the books table//
+                cmd.CommandText = "UPDATE Books SET Available=@ava, DueDate=@due Where BookId=@id";
+                cmd.Parameters.AddWithValue("ava", book.Available);
+                cmd.Parameters.AddWithValue("id", CurrentId);
+
+                return cmd.ExecuteNonQuery();
+            }
+        }
+        /// <summary>
+        /// Gets the available copies of the record from the books table. 
+        /// </summary>
+        /// <param name="copies"></param>
+        /// <returns></returns>
+        public static int GetAvailable(int copies)
+        {
+            int ava = 0;
+            using(con=new SqlConnection(conString))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Books WHERE BookId=@current", con);
+                cmd.Parameters.AddWithValue("current", CurrentId);
+                using(SqlDataReader rdr = cmd.ExecuteReader())
+                {
+                    if(rdr.HasRows) while (rdr.Read()) { ava = copies - int.Parse(rdr["Available"].ToString()); }
+                }
+            }
+            return ava;
+        }
+        /// <summary>
+        /// Gets the overdue value of the a specific record in the books table. 
+        /// </summary>
+        /// <returns></returns>
+        public static string GetOverdue()
+        {
+            string over = "";
+            using (con = new SqlConnection(conString))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Books WHERE BookId=@id", con);
+                cmd.Parameters.AddWithValue("id", CurrentId);
+                using(SqlDataReader rdr = cmd.ExecuteReader())
+                {
+                    if(rdr.HasRows) while (rdr.Read()) { over = rdr["Overdue"].ToString(); }
+                }
+            }
+            return over;
+        }
+        /// <summary>
+        /// Returns the due date from a specific record in the book table. 
+        /// </summary>
+        /// <returns></returns>
+        public static string GetDueDate()
+        {
+            string due = "";
+            using (con = new SqlConnection(conString))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Books WHERE BookId=@id", con);
+                cmd.Parameters.AddWithValue("id", CurrentId);
+                using (SqlDataReader rdr = cmd.ExecuteReader())
+                {
+                    if (rdr.HasRows) while (rdr.Read()) { due = rdr["DueDate"].ToString(); }
+                }
+            }
+            return due;
         }
     }
 }

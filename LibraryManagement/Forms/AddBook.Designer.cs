@@ -47,6 +47,8 @@ namespace LibraryManagement.Forms
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtCopies = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -78,8 +80,10 @@ namespace LibraryManagement.Forms
             this.panel2.Controls.Add(this.btnAdd);
             this.panel2.Controls.Add(this.cbxType);
             this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.txtCopies);
             this.panel2.Controls.Add(this.txtISBN);
             this.panel2.Controls.Add(this.txtYear);
             this.panel2.Controls.Add(this.txtPublisher);
@@ -90,7 +94,7 @@ namespace LibraryManagement.Forms
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(270, 68);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(350, 308);
+            this.panel2.Size = new System.Drawing.Size(350, 355);
             this.panel2.TabIndex = 2;
             // 
             // btnCancel
@@ -99,7 +103,7 @@ namespace LibraryManagement.Forms
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnCancel.Location = new System.Drawing.Point(225, 264);
+            this.btnCancel.Location = new System.Drawing.Point(225, 299);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(86, 32);
             this.btnCancel.TabIndex = 7;
@@ -112,7 +116,7 @@ namespace LibraryManagement.Forms
             this.btnAdd.BackColor = System.Drawing.Color.Gold;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(123, 264);
+            this.btnAdd.Location = new System.Drawing.Point(123, 299);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(86, 32);
             this.btnAdd.TabIndex = 6;
@@ -235,16 +239,33 @@ namespace LibraryManagement.Forms
             this.pictureBox1.Image = global::LibraryManagement.Properties.Resources.read_animated;
             this.pictureBox1.Location = new System.Drawing.Point(1, 68);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(274, 308);
+            this.pictureBox1.Size = new System.Drawing.Size(274, 355);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // txtCopies
+            // 
+            this.txtCopies.Location = new System.Drawing.Point(123, 264);
+            this.txtCopies.Name = "txtCopies";
+            this.txtCopies.Size = new System.Drawing.Size(121, 20);
+            this.txtCopies.TabIndex = 4;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(21, 260);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(69, 26);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Copies";
             // 
             // AddBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(621, 376);
+            this.ClientSize = new System.Drawing.Size(621, 422);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
@@ -281,5 +302,7 @@ namespace LibraryManagement.Forms
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TextBox txtYear;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtCopies;
     }
 }
