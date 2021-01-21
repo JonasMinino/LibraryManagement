@@ -25,5 +25,16 @@ namespace LibraryManagement.Forms
         {
             this.Close();
         }
+        /// <summary>
+        /// Checks if the student is already in the system.
+        /// Sends a message if the student exits.
+        /// Adds a new student to the system.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
