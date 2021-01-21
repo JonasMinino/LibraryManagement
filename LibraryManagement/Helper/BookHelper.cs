@@ -386,6 +386,8 @@ namespace LibraryManagement.Helper
         }
         /// <summary>
         /// Loads the books from the issued books table into a specific data grid view. 
+        /// Changes the overdue value to yes if the due date is less than today's date.
+        /// Formats the overdue cell with red or green background depending on the value. 
         /// </summary>
         /// <param name="dgv"></param>
         public static void LoadIssuedBooks(DataGridView dgv)
@@ -398,8 +400,27 @@ namespace LibraryManagement.Helper
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 dgv.DataSource = dt;
+                foreach (DataGridViewRow row in dgv.Rows)
+                {
+                    if(DateTime.Parse(row.Cells["DueDate"].Value.ToString()) < DateTime.Today)
+                    {
+                        row.Cells["Overdue"].Value = "YES";
+                    }
+
+                    if (row.Cells["Overdue"].Value.ToString()=="NO")
+                    {
+                        row.Cells["Overdue"].Style.BackColor = Color.FromArgb(184, 244, 191);
+                        row.Cells["Overdue"].Style.Font = new Font(dgv.Font, FontStyle.Bold);
+                    }
+                    else
+                    {
+                        row.Cells["Overdue"].Style.BackColor = Color.Salmon;
+                        row.Cells["Overdue"].Style.Font = new Font(dgv.Font, FontStyle.Bold);
+                    }
+                }
             }
 
         }
+      
     }
 }

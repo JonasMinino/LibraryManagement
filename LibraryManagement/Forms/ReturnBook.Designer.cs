@@ -154,7 +154,9 @@ namespace LibraryManagement.Forms
             this.Controls.Add(this.dgvViewIssuedBooks);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ReturnBook";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReturnBook";
             this.Load += new System.EventHandler(this.ReturnBook_Load);
             this.panel1.ResumeLayout(false);
