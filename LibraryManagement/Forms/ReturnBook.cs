@@ -42,7 +42,7 @@ namespace LibraryManagement.Forms
         /// <param name="e"></param>
         private void btnReturn_Click(object sender, EventArgs e)
         {
-
+            BookHelper.ReturnBook(int.Parse(dgvViewIssuedBooks.CurrentRow.Cells["BookId"].Value.ToString()));
         }
     }
 }

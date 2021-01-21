@@ -89,6 +89,7 @@ namespace LibraryManagement.Forms
                         BookHelper.LoadActive(dgvIssueBook);
                         cmbId.SelectedIndex = -1;
                         cmbStudentName.SelectedIndex = -1;
+                        dtpDueDate.Value = DateTime.Today.AddDays(10);
                     }
                 }
             }

@@ -308,8 +308,9 @@ namespace LibraryManagement.Helper
             {
                 //Adds a book to the issued books table//
                 con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO IssuedBooks (StudentId, StudentName, title, Author, DateIssued, DueDate, Overdue, Returned) VALUES(@sId, @sName, @title, @author, @date, @due, @over, @return)", con);
-                cmd.Parameters.AddWithValue("@sid", book.StudentId);
+                SqlCommand cmd = new SqlCommand("INSERT INTO IssuedBooks (StudentId, BookId, StudentName, title, Author, DateIssued, DueDate, Overdue, Returned) VALUES(@sId, @bId, @sName, @title, @author, @date, @due, @over, @return)", con);
+                cmd.Parameters.AddWithValue("@sId", book.StudentId);
+                cmd.Parameters.AddWithValue("@bId", book.BookId);
                 cmd.Parameters.AddWithValue("@sName", book.StudentName);
                 cmd.Parameters.AddWithValue("@title", book.Title);
                 cmd.Parameters.AddWithValue("@author", book.Author);
@@ -396,7 +397,7 @@ namespace LibraryManagement.Helper
             using(con = new SqlConnection(conString))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM IssuedBooks WHERE Returned=@return", con);
+                SqlCommand cmd = new SqlCommand("SELECT StudentId,BookId,StudentName,Title,Author,DateIssued,DueDate,Overdue FROM IssuedBooks WHERE Returned=@return", con);
                 cmd.Parameters.AddWithValue("return", 0);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
