@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryManagement.Helper;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,15 @@ namespace LibraryManagement.Forms
         public ReturnBook()
         {
             InitializeComponent();
+        }
+        /// <summary>
+        /// Loads issued books into the data grid view.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ReturnBook_Load(object sender, EventArgs e)
+        {
+            BookHelper.LoadIssuedBooks(dgvViewIssuedBooks);
         }
     }
 }

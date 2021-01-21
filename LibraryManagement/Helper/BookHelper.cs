@@ -384,5 +384,22 @@ namespace LibraryManagement.Helper
             }
             return due;
         }
+        /// <summary>
+        /// Loads the books from the issued books table into a specific data grid view. 
+        /// </summary>
+        /// <param name="dgv"></param>
+        public static void LoadIssuedBooks(DataGridView dgv)
+        {
+            using(con = new SqlConnection(conString))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM IssuedBooks", con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dgv.DataSource = dt;
+            }
+
+        }
     }
 }

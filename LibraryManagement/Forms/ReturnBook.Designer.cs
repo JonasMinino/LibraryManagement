@@ -156,6 +156,7 @@ namespace LibraryManagement.Forms
             this.Controls.Add(this.panel1);
             this.Name = "ReturnBook";
             this.Text = "ReturnBook";
+            this.Load += new System.EventHandler(this.ReturnBook_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
