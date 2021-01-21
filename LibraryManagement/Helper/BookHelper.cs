@@ -431,11 +431,10 @@ namespace LibraryManagement.Helper
         }
         /// <summary>
         /// Updates the return value of Issued Books table.
-        /// Reloads the issued books table.
         /// Updates the available value in the Books table. 
         /// </summary>
         /// <param name="bookId"></param>
-        public static void ReturnBook(int bookId)
+        public static int ReturnBook(int bookId)
         {
             int available = 0;
             using(con= new SqlConnection(conString))
@@ -458,12 +457,7 @@ namespace LibraryManagement.Helper
                 available++;
                 cmd.CommandText = "UPDATE Books SET Available=@ava WHERE BookId=@id";
                 cmd.Parameters.AddWithValue("ava", available);
-                cmd.ExecuteNonQuery();
-
-                //Reload the Return Book data grid view.//
-                ReturnBook rb = new ReturnBook();
-                LoadIssuedBooks(rb.dgvViewIssuedBooks);
-                rb.dgvViewIssuedBooks.Refresh();
+                return cmd.ExecuteNonQuery();
             }
 
         }

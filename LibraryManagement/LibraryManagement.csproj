@@ -71,6 +71,12 @@
     <Compile Include="Forms\AddBook.Designer.cs">
       <DependentUpon>AddBook.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AddStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddStudent.Designer.cs">
+      <DependentUpon>AddStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ForgotPassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\AddBook.resx">
       <DependentUpon>AddBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddStudent.resx">
+      <DependentUpon>AddStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ForgotPassword.resx">
       <DependentUpon>ForgotPassword.cs</DependentUpon>
@@ -233,6 +242,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>LibaryDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\AnimatedStudent.gif" />
     <None Include="Resources\BookDream.jpg" />
     <None Include="Resources\OpenBook.png" />
   </ItemGroup>
