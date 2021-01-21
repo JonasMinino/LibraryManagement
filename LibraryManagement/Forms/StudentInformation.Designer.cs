@@ -81,6 +81,7 @@ namespace LibraryManagement.Forms
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnCancel
             // 
@@ -107,6 +108,7 @@ namespace LibraryManagement.Forms
             this.btnUpdate.TabIndex = 2;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // panel2
             // 

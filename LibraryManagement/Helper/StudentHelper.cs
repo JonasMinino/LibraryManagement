@@ -15,6 +15,7 @@ namespace LibraryManagement.Helper
     {
         private static SqlConnection con;
         private static string conString = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
+        public static int currentId = 0;
         public static void LoadNames(ComboBox combo)
         {
             List<string> list = new List<string>();

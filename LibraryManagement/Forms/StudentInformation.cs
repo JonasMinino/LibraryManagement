@@ -35,5 +35,24 @@ namespace LibraryManagement.Forms
         {
             StudentHelper.LoadStudents(dgvStudents);
         }
+        /// <summary>
+        /// Opens the add student form.
+        ///Closes the current form. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            this.Hide(); (new AddStudent()).ShowDialog(); this.Close();
+        }
+        /// <summary>
+        /// Opens the update student form. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
