@@ -82,6 +82,7 @@ namespace LibraryManagement.Forms
             this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnUpdate
             // 
@@ -152,7 +153,7 @@ namespace LibraryManagement.Forms
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(156, 19);
+            this.label1.Location = new System.Drawing.Point(185, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(183, 33);
             this.label1.TabIndex = 0;
@@ -160,7 +161,7 @@ namespace LibraryManagement.Forms
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::LibraryManagement.Properties.Resources.AnimatedStudent;
+            this.pictureBox1.Image = global::LibraryManagement.Properties.Resources.Update;
             this.pictureBox1.Location = new System.Drawing.Point(1, 65);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(149, 182);
@@ -176,8 +177,11 @@ namespace LibraryManagement.Forms
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "UpdateStudent";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UpdateStudent";
+            this.Load += new System.EventHandler(this.UpdateStudent_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);

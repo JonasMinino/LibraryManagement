@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryManagement.Helper;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,21 @@ namespace LibraryManagement.Forms
         public UpdateStudent()
         {
             InitializeComponent();
+        }
+        /// <summary>
+        /// Loads the selected student information
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void UpdateStudent_Load(object sender, EventArgs e)
+        {
+            var dt = StudentHelper.GetSigleStudent();
+            foreach(DataRow row in dt.Rows)
+            {
+                txtFirstName.Text = row["FirstName"].ToString();
+                txtLastName.Text = row["LastName"].ToString();
+                dtpDOB.Value = DateTime.Parse(row["DateofBirth"].ToString());
+            }
         }
     }
 }

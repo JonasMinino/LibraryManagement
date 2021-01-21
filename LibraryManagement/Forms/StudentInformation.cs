@@ -52,7 +52,9 @@ namespace LibraryManagement.Forms
         /// <param name="e"></param>
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
+            StudentHelper.currentId = int.Parse(dgvStudents.CurrentRow.Cells["StudentId"].Value.ToString());
+            (new UpdateStudent()).ShowDialog();
         }
+       
     }
 }

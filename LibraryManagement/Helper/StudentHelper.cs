@@ -120,5 +120,18 @@ namespace LibraryManagement.Helper
                 dgv.DataSource = dt;
             }
         }
+        public static DataTable GetSigleStudent()
+        {
+            using(con = new SqlConnection(conString))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Student WHERE StudentId=@id", con);
+                cmd.Parameters.AddWithValue("id", currentId);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+        }
     }
 }
