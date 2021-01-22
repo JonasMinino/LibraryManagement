@@ -169,5 +169,24 @@ namespace LibraryManagement.Helper
                 return cmd.ExecuteNonQuery();
             }
         }
+        /// <summary>
+        /// Populates the data grid view with students matching a search term.
+        /// </summary>
+        /// <param name="dgv"></param>
+        public static void SearchStudent(string search, DataGridView dgv)
+        {
+            using(con = new SqlConnection(conString))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Student WHERE FirstName LIKE @first OR LastName LIKE @last OR DateofBirth LIKE @dob", con);
+                cmd.Parameters.AddWithValue("first", string.Format("%{0}%", search));
+                cmd.Parameters.AddWithValue("last", string.Format("%{0}%", search));
+                cmd.Parameters.AddWithValue("dob", string.Format("%{0}%", search));
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dgv.DataSource = dt;
+            }
+        }
     }
 }

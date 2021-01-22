@@ -68,5 +68,23 @@ namespace LibraryManagement.Forms
 
             if (result == DialogResult.OK) if (StudentHelper.DeleteRecord() > 0) StudentHelper.LoadStudents(dgvStudents);
         }
+        /// <summary>
+        /// Reloads the data grid view when the search bar is empty.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtSearch.Text)) StudentHelper.LoadStudents(dgvStudents);
+        }
+        /// <summary>
+        /// Searches the student table for a specific term. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            StudentHelper.SearchStudent(txtSearch.Text, dgvStudents);
+        }
     }
 }
