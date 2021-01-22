@@ -89,7 +89,7 @@ namespace LibraryManagement.Helper
             using (con = new SqlConnection(conString))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO Books (Title, Author, Publisher, Year, ISBN, Type, Copies, Checkedout) VALUES(@title, @author,@publisher, @year, @isbn, @type, @copies, @available, @over)", con);
+                SqlCommand cmd = new SqlCommand("INSERT INTO Books (Title, Author, Publisher, Year, ISBN, Type, Copies, Available,  Overdue) VALUES(@title, @author,@publisher, @year, @isbn, @type, @copies, @available, @over)", con);
                 cmd.Parameters.AddWithValue("@title", book.Title);
                 cmd.Parameters.AddWithValue("@author", book.Author);
                 cmd.Parameters.AddWithValue("@publisher", book.Publisher);
@@ -461,7 +461,24 @@ namespace LibraryManagement.Helper
             }
 
         }
-
+        /// <summary>
+        /// Populates a data grid view with the matches of a search in the Issued Books table.
+        /// </summary>
+        /// <param name="search"></param>
+        /// <param name="dgv"></param>
+        public static void SearchIssuedBooks(string search, DataGridView dgv)
+        {
+            using(con = new SqlConnection(conString))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM IssuedBooks WHERE StudentName LIKE @search OR Title LIKE @search OR Author LIKE @search OR DateIssued LIKE @search OR DueDate LIKE @search", con);
+                cmd.Parameters.AddWithValue("search", string.Format("%{0}%", search));
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dgv.DataSource = dt;
+            }
+        }
 
     }
 }

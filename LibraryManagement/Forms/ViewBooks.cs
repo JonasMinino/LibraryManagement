@@ -38,13 +38,13 @@ namespace LibraryManagement.Forms
             txtSearch.AutoCompleteCustomSource = source;
         }
         /// <summary>
-        /// Closes the current form and opens the Add Book Form
+        /// Closes the current form and opens the Add Book Form.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            (new AddBook()).ShowDialog(); 
+            this.Hide(); (new AddBook()).ShowDialog(); this.Close();
         }
         /// <summary>
         /// Changes the value of the current id variable.

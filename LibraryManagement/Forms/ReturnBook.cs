@@ -47,5 +47,23 @@ namespace LibraryManagement.Forms
                 BookHelper.LoadIssuedBooks(dgvViewIssuedBooks);
             }
         }
+        /// <summary>
+        /// Reloads the data grid view when search textbox is empty. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtSearch.Text)) BookHelper.LoadIssuedBooks(dgvViewIssuedBooks);
+        }
+        /// <summary>
+        /// Populates the data grid view with records matching the search term.  
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            BookHelper.SearchIssuedBooks(txtSearch.Text, dgvViewIssuedBooks);
+        }
     }
 }
