@@ -55,6 +55,18 @@ namespace LibraryManagement.Forms
             StudentHelper.currentId = int.Parse(dgvStudents.CurrentRow.Cells["StudentId"].Value.ToString());
             (new UpdateStudent()).ShowDialog();
         }
-       
+        /// <summary>
+        /// Displays a warning.
+        /// Deletes the selected record from the Student table. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            StudentHelper.currentId = int.Parse(dgvStudents.CurrentRow.Cells["StudentId"].Value.ToString());
+            DialogResult result = MessageBox.Show("Are you sure you want to delete the record for: " + StudentHelper.currentId + " " + dgvStudents.CurrentRow.Cells["FirstName"].Value.ToString() + " , " + dgvStudents.CurrentRow.Cells["LastName"].Value.ToString() + "?", "Delete Record", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.OK) if (StudentHelper.DeleteRecord() > 0) StudentHelper.LoadStudents(dgvStudents);
+        }
     }
 }

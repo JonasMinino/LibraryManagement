@@ -147,13 +147,27 @@ namespace LibraryManagement.Helper
             using (con = new SqlConnection(conString))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE Student SET FirstName=@first LastName=@last DateofBirth=@dob WHERE StudentId=@id", con);
-                cmd.Parameters.AddWithValue("fist", student.FirstName);
+                SqlCommand cmd = new SqlCommand("UPDATE Student SET FirstName=@first, LastName=@last, DateofBirth=@dob WHERE StudentId=@id", con);
+                cmd.Parameters.AddWithValue("first", student.FirstName);
                 cmd.Parameters.AddWithValue("last", student.LastName);
                 cmd.Parameters.AddWithValue("dob", student.DateofBirth);
                 cmd.Parameters.AddWithValue("id", currentId);
                 return cmd.ExecuteNonQuery();
             }            
+        }
+        /// <summary>
+        /// Deletes a single record from the Student table using the current id.
+        /// </summary>
+        /// <returns></returns>
+        public static int DeleteRecord()
+        {
+            using(con = new SqlConnection(conString))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("DELETE FROM Student WHERE StudentId=@id", con);
+                cmd.Parameters.AddWithValue("id", currentId);
+                return cmd.ExecuteNonQuery();
+            }
         }
     }
 }
