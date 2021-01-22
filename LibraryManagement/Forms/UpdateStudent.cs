@@ -1,4 +1,5 @@
 ﻿using LibraryManagement.Helper;
+using LibraryManagement.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -40,6 +41,28 @@ namespace LibraryManagement.Forms
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        /// <summary>
+        /// Updates a single student record.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            Student student = new Student(null, txtFirstName.Text, txtLastName.Text, dtpDOB.Value.ToString("MM/dd/yyyy"));
+            if (!StudentHelper.ValidateStudent(student))
+            {
+                if (StudentHelper.UpdateStudent(student) > 0)
+                {
+                    DialogResult result = MessageBox.Show("The record for " + student.FirstName + " , " + student.LastName + " has been updated.", "Record Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (result == DialogResult.OK)
+                    {
+                        StudentInformation si = (StudentInformation)Application.OpenForms["StudentInformation"];
+                        StudentHelper.LoadStudents(si.dgvStudents);
+                        this.Close();
+                    }
+                }
+            }
         }
     }
 }
